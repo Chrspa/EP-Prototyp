@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/loginScreen">
+
+    <fragment
+        android:id="@+id/loginScreen"
+        android:name="com.example.ep_prototyp.LoginScreen"
+        android:label="fragment_login_screen"
+        tools:layout="@layout/fragment_login_screen" >
+        <action
+            android:id="@+id/action_loginScreen_to_introduction"
+            app:destination="@id/introduction" />
+        <action
+            android:id="@+id/action_loginScreen_to_analysis1"
+            app:destination="@id/analysis1" />
+    </fragment>
+    <fragment
+        android:id="@+id/analysis1"
+        android:name="com.example.ep_prototyp.Analysis1"
+        android:label="fragment_analysis1"
+        tools:layout="@layout/fragment_analysis1" >
+        <action
+            android:id="@+id/action_analysis1_to_analysis2"
+            app:destination="@id/analysis2" />
+    </fragment>
+    <fragment
+        android:id="@+id/analysis2"
+        android:name="com.example.ep_prototyp.Analysis2"
+        android:label="fragment_analysis2"
+        tools:layout="@layout/fragment_analysis2" >
+        <action
+            android:id="@+id/action_analysis2_to_analysis3"
+            app:destination="@id/analysis3" />
+    </fragment>
+    <fragment
+        android:id="@+id/analysis3"
+        android:name="com.example.ep_prototyp.Analysis3"
+        android:label="fragment_analysis3"
+        tools:layout="@layout/fragment_analysis3" >
+        <action
+            android:id="@+id/action_analysis3_to_analysis4"
+            app:destination="@id/analysis4" />
+    </fragment>
+    <fragment
+        android:id="@+id/analysis4"
+        android:name="com.example.ep_prototyp.Analysis4"
+        android:label="fragment_analysis4"
+        tools:layout="@layout/fragment_analysis4" >
+        <action
+            android:id="@+id/action_analysis4_to_analysis5"
+            app:destination="@id/analysis5" />
+    </fragment>
+    <fragment
+        android:id="@+id/introduction"
+        android:name="com.example.ep_prototyp.Introduction"
+        android:label="fragment_introduction"
+        tools:layout="@layout/fragment_introduction" >
+        <action
+            android:id="@+id/action_introduction_to_analysis1"
+            app:destination="@id/analysis1" />
+    </fragment>
+    <fragment
+        android:id="@+id/design"
+        android:name="com.example.ep_prototyp.Design"
+        android:label="fragment_design"
+        tools:layout="@layout/fragment_design" >
+        <action
+            android:id="@+id/action_design_to_design2"
+            app:destination="@id/design2" />
+    </fragment>
+    <fragment
+        android:id="@+id/practice1"
+        android:name="com.example.ep_prototyp.PracticeMain"
+        android:label="fragment_practice_main"
+        tools:layout="@layout/fragment_practice_main" >
+        <action
+            android:id="@+id/action_practice1_to_practice2"
+            app:destination="@id/practice2" />
+    </fragment>
+    <fragment
+        android:id="@+id/review"
+        android:name="com.example.ep_prototyp.Review"
+        android:label="fragment_review"
+        tools:layout="@layout/fragment_review" >
+        <action
+            android:id="@+id/action_review_to_review2"
+            app:destination="@id/review2" />
+    </fragment>
+    <fragment
+        android:id="@+id/analysis5"
+        android:name="com.example.ep_prototyp.Analysis5"
+        android:label="fragment_analysis5"
+        tools:layout="@layout/fragment_analysis5" >
+        <action
+            android:id="@+id/action_analysis5_to_design"
+            app:destination="@id/design" />
+    </fragment>
+    <fragment
+        android:id="@+id/design2"
+        android:name="com.example.ep_prototyp.Design2"
+        android:label="fragment_design2"
+        tools:layout="@layout/fragment_design2" >
+        <action
+            android:id="@+id/action_design2_to_design3"
+            app:destination="@id/design3" />
+    </fragment>
+    <fragment
+        android:id="@+id/design3"
+        android:name="com.example.ep_prototyp.Design3"
+        android:label="fragment_design3"
+        tools:layout="@layout/fragment_design3" >
+        <action
+            android:id="@+id/action_design3_to_practiceMain"
+            app:destination="@id/practice1" />
+    </fragment>
+    <fragment
+        android:id="@+id/practice2"
+        android:name="com.example.ep_prototyp.practice2"
+        android:label="fragment_practice2"
+        tools:layout="@layout/fragment_practice2" >
+        <action
+            android:id="@+id/action_practice2_to_review"
+            app:destination="@id/review" />
+    </fragment>
+    <fragment
+        android:id="@+id/review2"
+        android:name="com.example.ep_prototyp.review2"
+        android:label="fragment_review2"
+        tools:layout="@layout/fragment_review2" >
+        <action
+            android:id="@+id/action_review2_to_analysis1"
+            app:destination="@id/analysis1" />
+        <action
+            android:id="@+id/action_review2_to_design"
+            app:destination="@id/design" />
+        <action
+            android:id="@+id/action_review2_to_practice1"
+            app:destination="@id/practice1" />
+    </fragment>
+</navigation>
