@@ -23,7 +23,6 @@ class Analysis3 : Fragment() {
 
         Button.setOnClickListener {
             findNavController().navigate(R.id.action_analysis3_to_analysis4)
-
         }
 
 
