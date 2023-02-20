@@ -21,7 +21,7 @@
         android:id="@+id/setGoalText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="152dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="gib ein Ziel ein"
@@ -31,24 +31,46 @@
         app:layout_constraintTop_toBottomOf="@+id/zielTextView" />
 
     <TextView
-        android:id="@+id/analyisiInfoTextView"
+        android:id="@+id/analyisisInfoTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Was macht ein gutes Ziel aus?"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.689" />
+        app:layout_constraintTop_toBottomOf="@+id/zielTextView"
+        app:layout_constraintVertical_bias="0.056" />
 
     <Button
         android:id="@+id/weiterZuAnalysis2Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginBottom="32dp"
         android:text="weiter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/submitGoal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="Submit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/setGoalText" />
+
+    <TextView
+        android:id="@+id/feedbackTextGoal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/analyisiInfoTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/submitGoal" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
