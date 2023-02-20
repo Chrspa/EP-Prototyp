@@ -6,10 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.example.ep_prototyp.R
 
 class LoginScreen : Fragment() {
+
+    private lateinit var mProfileViewModel: ProfileViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -19,21 +23,36 @@ class LoginScreen : Fragment() {
         val view = inflater.inflate(R.layout.fragment_login_screen, container, false)
 
         val buttonIntroduction=view.findViewById<Button>(R.id.weiterZuIntroductionLoginButton)
+        val buttonAnalysis1=view.findViewById<Button>(R.id.weiterZuAnalysisLoginButton)
+        val submitButton= view.findViewById<Button>(R.id.submitButton1)
 
+        mProfileViewModel= ViewModelProvider(this).get(ProfileViewModel::class.java)
         buttonIntroduction.setOnClickListener {
             findNavController().navigate(R.id.action_loginScreen_to_introduction)
         }
-        val buttonAnalysis1=view.findViewById<Button>(R.id.weiterZuAnalysisLoginButton)
 
         buttonAnalysis1.setOnClickListener {
             findNavController().navigate(R.id.action_loginScreen_to_analysis1)
         }
 
-
+        submitButton.setOnClickListener {
+            insertDatatoDatabase()
+        }
 
         return view
     }
 
+    private fun insertDatatoDatabase() {
+        val name = view?.findViewById<EditText>(R.id.editNametext)?.text.toString()
+        if(name!==null){
+            val profile= Profile(0,name,null,null)
+            mProfileViewModel.createProfile(profile)
+            Toast.makeText(requireContext(),"hat Funktioniert!",Toast.LENGTH_LONG).show()
+        }else{
+            Toast.makeText(requireContext(),"bitte Namen eingeben!",Toast.LENGTH_LONG).show()
+        }
+
+    }
 
 
 }
