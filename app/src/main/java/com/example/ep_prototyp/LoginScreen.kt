@@ -40,7 +40,7 @@ class LoginScreen : Fragment() {
                 feedback.text = "Bitte gib einen Namen ein."
             }
             else{
-                feedback.text = "Hallo $profileName!. Klicke auf \\\"Start\\\" um loszulegen oder auf \\\"Einführung\\\", \" +\n" +
+                feedback.text = "Hallo $profileName!. Klicke auf \"Start\" um loszulegen oder auf \"Einführung\", \" +\n" +
                                     "\"wenn du mehr zum Prinzip der App und zum Ablauf erfahren möchtest."
             }
         }
