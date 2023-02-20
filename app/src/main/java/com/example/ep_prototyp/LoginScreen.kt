@@ -36,7 +36,7 @@ class LoginScreen : Fragment() {
         submitButton.setOnClickListener(){
             val profileName = editName.text
             //dann profileName in room speichern
-            if (editName.text == "Dein Name" || editName.text == ""){
+            if (editName.text.toString() == "Name" || editName.text.toString() == ""){
                 feedback.text = "Bitte gib einen Namen ein."
             }
             else{
