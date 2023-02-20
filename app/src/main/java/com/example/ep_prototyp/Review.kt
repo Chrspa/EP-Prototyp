@@ -18,9 +18,9 @@ class Review : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_review, container, false)
 
-        val Button=view.findViewById<Button>(R.id.weiterZuReview2Button)
+        val button=view.findViewById<Button>(R.id.weiterZuReview2Button)
 
-        Button.setOnClickListener {
+        button.setOnClickListener {
             findNavController().navigate(R.id.action_review_to_review2)
 
         }

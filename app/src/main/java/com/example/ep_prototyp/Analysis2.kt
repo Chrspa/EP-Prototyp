@@ -20,9 +20,9 @@ class Analysis2 : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_analysis2, container, false)
 
-        val Button=view.findViewById<Button>(R.id.weiterZuAnalysis3Button)
+        val button=view.findViewById<Button>(R.id.weiterZuAnalysis3Button)
 
-        Button.setOnClickListener {
+        button.setOnClickListener {
             findNavController().navigate(R.id.action_analysis2_to_analysis3)
 
         }

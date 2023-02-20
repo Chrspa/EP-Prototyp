@@ -18,9 +18,9 @@ class Introduction : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_introduction, container, false)
 
-        val Button=view.findViewById<Button>(R.id.weiterZuAnalysisIntroductionButton)
+        val button=view.findViewById<Button>(R.id.weiterZuAnalysisIntroductionButton)
 
-        Button.setOnClickListener {
+        button.setOnClickListener {
             findNavController().navigate(R.id.action_introduction_to_analysis1)
 
         }
