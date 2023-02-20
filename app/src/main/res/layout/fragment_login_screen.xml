@@ -11,10 +11,10 @@
         android:id="@+id/welcomeView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="welcometext"
+        android:layout_marginTop="92dp"
+        android:text="Herzlich Willkommen bei xy!"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -44,9 +44,10 @@
         android:id="@+id/InputNameRequestText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:text="Inputname"
+        android:layout_marginTop="76dp"
+        android:text="Wie dürfen wir dich nennen?"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/welcomeView1" />
 
@@ -54,7 +55,7 @@
         android:id="@+id/editNametext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="32dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
@@ -64,11 +65,10 @@
         app:layout_constraintTop_toBottomOf="@+id/InputNameRequestText" />
 
     <TextView
-        android:id="@+id/warningText1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/feedbackText"
+        android:layout_width="230dp"
+        android:layout_height="64dp"
         android:layout_marginTop="16dp"
-        android:text="WarningText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"

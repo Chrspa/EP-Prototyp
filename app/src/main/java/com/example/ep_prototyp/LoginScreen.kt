@@ -6,8 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import androidx.navigation.fragment.findNavController
-import com.example.ep_prototyp.R
 
 class LoginScreen : Fragment() {
 
@@ -27,6 +27,22 @@ class LoginScreen : Fragment() {
 
         buttonAnalysis1.setOnClickListener {
             findNavController().navigate(R.id.action_loginScreen_to_analysis1)
+        }
+
+        val editName = view.findViewById<TextView>(R.id.editNametext)
+        val submitButton = view.findViewById<Button>(R.id.submitButton1)
+        val feedback = view.findViewById<TextView>(R.id.feedbackText)
+
+        submitButton.setOnClickListener(){
+            val profileName = editName.text
+            //dann profileName in room speichern
+            if (editName.text == "Dein Name" || editName.text == ""){
+                feedback.text = "Bitte gib einen Namen ein."
+            }
+            else{
+                feedback.text = "Hallo $profileName!. Klicke auf \\\"Start\\\" um loszulegen oder auf \\\"Einführung\\\", \" +\n" +
+                                    "\"wenn du mehr zum Prinzip der App und zum Ablauf erfahren möchtest."
+            }
         }
 
 

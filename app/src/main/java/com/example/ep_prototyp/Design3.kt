@@ -18,9 +18,9 @@ class Design3 : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_design3, container, false)
 
-        val Button=view.findViewById<Button>(R.id.weiterZuPracticeDesignButton)
+        val button=view.findViewById<Button>(R.id.weiterZuPracticeDesignButton)
 
-        Button.setOnClickListener {
+        button.setOnClickListener {
             findNavController().navigate(R.id.action_design3_to_practiceMain)
 
         }
