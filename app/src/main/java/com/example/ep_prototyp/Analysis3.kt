@@ -22,8 +22,8 @@ class Analysis3 : Fragment() {
         val button=view.findViewById<Button>(R.id.weiterZuAnalysis4Button)
 
         button.setOnClickListener {
+            //alle Eingaben müssen gemacht sein, bevor "Weiter" geklickt werden kann
             findNavController().navigate(R.id.action_analysis3_to_analysis4)
-
         }
 
 

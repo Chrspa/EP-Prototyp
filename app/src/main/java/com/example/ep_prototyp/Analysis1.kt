@@ -23,6 +23,7 @@ class Analysis1 : Fragment() {
         val button=view.findViewById<Button>(R.id.weiterZuAnalysis2Button)
 
         button.setOnClickListener {
+            //wenn noch kein Ziel gespeichert, sollte kein "Weiter" möglich sein
             findNavController().navigate(R.id.action_analysis1_to_analysis2)
         }
 
@@ -33,7 +34,7 @@ class Analysis1 : Fragment() {
         submitButton.setOnClickListener(){
             val goal = setGoal.text
             //hier Ziel speichern (room)
-            if (setGoal.text == "gib dein Ziel ein" || setGoal.text == ""){
+            if (setGoal.text.toString() == "gib dein Ziel ein" || setGoal.text.toString() == ""){
                 feedbackGoal.text = "Bitte gib ein Ziel ein."
             }
             else {

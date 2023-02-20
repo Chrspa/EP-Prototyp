@@ -20,50 +20,59 @@
         android:id="@+id/weiterZuAnalysis3Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="Weiter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="623dp" />
 
     <Button
-        android:id="@+id/verhaltenHinzufügenButton"
+        android:id="@+id/submitBehavior"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="23dp"
+        android:layout_marginTop="4dp"
         android:text="Verhalten Hinzufügen"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/VerhaltensweisenFestlegenText" />
+        app:layout_constraintTop_toBottomOf="@+id/eingabeVerhalten" />
 
     <EditText
-        android:id="@+id/VerhaltensweisenFestlegenText"
+        android:id="@+id/eingabeVerhalten"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="124dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Gib ein Verhalten ein"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/verhaltenFestlegentextView" />
 
     <TextView
-        android:id="@+id/erklärungVerhaltenTextView"
+        android:id="@+id/erklärungVerhaltenText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="Das macht ein Verhalten aus"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="561dp" />
+        tools:layout_editor_absoluteY="128dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="331dp"
         android:layout_height="250dp"
         tools:layout_editor_absoluteX="40dp"
-        tools:layout_editor_absoluteY="296dp" />
+        tools:layout_editor_absoluteY="345dp" />
+
+    <TextView
+        android:id="@+id/feedbackBehavior"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="326dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
