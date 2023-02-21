@@ -11,13 +11,10 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ep_prototyp.R
+import com.example.ep_prototyp.RecyclerAdapter
 
 
 class Analysis3 : Fragment() {
-
-    private var layoutManager : RecyclerView.LayoutManager? = null
-    private var adapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>? = null
-    private lateinit var recyclerView: RecyclerView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,6 +23,16 @@ class Analysis3 : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_analysis3, container, false)
 
+        val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewRating)
+        val adapter = RecyclerAdapter(listOf("Item 1", "Item 2", "Item 3"))
+
+        // Adapter auf RecycleView setzen
+        recyclerView.adapter = adapter
+
+        // Layout Manager auf RecyclerView setzen
+        val layoutManager = LinearLayoutManager(context)
+        recyclerView.layoutManager = layoutManager
+
         val button=view.findViewById<Button>(R.id.weiterZuAnalysis4Button)
 
         button.setOnClickListener {
@@ -33,13 +40,8 @@ class Analysis3 : Fragment() {
             findNavController().navigate(R.id.action_analysis3_to_analysis4)
         }
 
-        recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewRating)
-        adapter = RecyclerAdapter()
-        recyclerView.adapter = adapter
-
-
-
 
         return view
     }
+
 }

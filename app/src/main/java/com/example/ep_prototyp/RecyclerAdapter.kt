@@ -8,29 +8,26 @@ import android.widget.SeekBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
+class RecyclerAdapter (val list: List<String>) : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerAdapter.ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.card_layout_behaviors, parent, false)
         return ViewHolder(v)
     }
 
     override fun onBindViewHolder(holder: RecyclerAdapter.ViewHolder, position: Int) {
+        holder.itemTitle.text = list[position]
 
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return list.size
     }
 
-    inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        var itemImage: ImageView
-        var itemTitle: TextView
-        var seekBar : SeekBar
+    class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
+        var itemImage = itemView.findViewById<ImageView>(R.id.image_behavior)
+        var itemTitle = itemView.findViewById<TextView>(R.id.behaviorName)
+        var seekBar = itemView.findViewById<SeekBar>(R.id.seekBarBehavior)
 
-        init {
-            itemImage = itemView.findViewById(R.id.image_behavior)
-            itemTitle = itemView.findViewById(R.id.behaviorName)
-            seekBar = itemView.findViewById(R.id.seekBarBehavior)
-        }
     }
 }
