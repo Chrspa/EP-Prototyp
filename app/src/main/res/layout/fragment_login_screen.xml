@@ -7,82 +7,103 @@
     android:layout_height="match_parent"
     tools:context=".LoginScreen">
 
-    <TextView
-        android:id="@+id/welcomeView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="92dp"
-        android:text="Herzlich Willkommen bei xy!"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/submitButton1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="59dp"
-        android:text="Submit"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editNametext" />
-
-    <Button
-        android:id="@+id/weiterZuIntroductionLoginButton"
-        android:layout_width="374dp"
-        android:layout_height="58dp"
-        android:layout_marginBottom="4dp"
-        android:text="Introduction"
-        app:layout_constraintBottom_toTopOf="@+id/weiterZuAnalysisLoginButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.432"
-        app:layout_constraintStart_toStartOf="parent" />
+    <ImageView
+        android:id="@+id/header_login"
+        android:layout_width="match_parent"
+        android:layout_height="102dp"
+        android:background="#010221"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:src="" />
 
     <TextView
         android:id="@+id/InputNameRequestText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
+        android:layout_marginBottom="13dp"
         android:text="Wie dürfen wir dich nennen?"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/welcomeView1" />
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        tools:layout_editor_absoluteX="13dp" />
 
-    <EditText
-        android:id="@+id/editNametext"
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="13dp"
+        android:layout_marginBottom="13dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/feedbackText"
+        tools:layout_editor_absoluteX="13dp">
+
+        <EditText
+            android:id="@+id/editNametext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Name" />
+
+        <Button
+            android:id="@+id/submitButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:background="#010221"
+            android:text="Submit" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/welcomeView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
+        android:layout_marginTop="45dp"
+        android:textSize="20dp"
+        android:textAllCaps="true"
+        android:text="Herzlich Willkommen bei xy!"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/InputNameRequestText" />
+        app:layout_constraintTop_toBottomOf="@+id/header_login" />
+
 
     <TextView
         android:id="@+id/feedbackText"
-        android:layout_width="230dp"
-        android:layout_height="64dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/submitButton1" />
+        android:layout_width="match_parent"
+        android:layout_height="153dp"
+        android:layout_marginHorizontal="13dp"
+        android:layout_marginBottom="30dp"
+        android:background="#F0F1F1"
+        app:layout_constraintBottom_toTopOf="@+id/weiterZuIntroductionLoginButton"
+        tools:layout_editor_absoluteX="13dp" />
+
+    <Button
+        android:id="@+id/weiterZuIntroductionLoginButton"
+        android:layout_width="153dp"
+        android:layout_height="68dp"
+        android:layout_margin="13dp"
+        android:text="einführung"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <Button
         android:id="@+id/weiterZuAnalysisLoginButton"
-        android:layout_width="379dp"
-        android:layout_height="58dp"
-        android:layout_marginBottom="80dp"
+        android:layout_width="153dp"
+        android:layout_height="68dp"
+        android:layout_margin="13dp"
         android:text="Start"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="68dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginLeft="172dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
