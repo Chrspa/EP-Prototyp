@@ -2,41 +2,46 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginBottom="102dp"
     tools:context=".Analysis4">
 
+    <ImageView
+        android:id="@+id/header_verhalten"
+        android:layout_width="match_parent"
+        android:layout_height="102dp"
+        android:background="@color/light_grey"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/watercolor_atmo2" />
+
     <TextView
-        android:id="@+id/einfachheitTextView"
-        android:layout_width="283dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="48dp"
-        android:text="Wie leicht fällt es dir, die Verhaltensweisen auszuführen?"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/weiterZuAnalysis5Button"
-        android:layout_width="360dp"
-        android:layout_height="64dp"
-        android:layout_marginBottom="16dp"
-        android:text="weiter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewRating"
-        android:layout_width="389dp"
-        android:layout_height="508dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/easeTextView"
+        android:layout_width="300dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="20dp"
+        android:text="Wie leicht fällt es dir, die Verhaltensweisen tatsächlich umzusetzen?"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5" />
+        app:layout_constraintTop_toBottomOf="@id/header_verhalten" />
+
+    <Button
+        android:id="@+id/weiterZuAnalysis5Button"
+        android:layout_width="153dp"
+        android:layout_height="68dp"
+        android:layout_margin="13dp"
+        android:text="weiter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewRating2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginHorizontal="13dp"
+        app:layout_constraintTop_toBottomOf="@+id/easeTextView" />
 </androidx.constraintlayout.widget.ConstraintLayout>

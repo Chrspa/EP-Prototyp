@@ -27,7 +27,7 @@ class Analysis1 : Fragment() {
             findNavController().navigate(R.id.action_analysis1_to_analysis2)
         }
 
-        val setGoal = view.findViewById<TextView>(R.id.setGoalText)
+        val setGoal = view.findViewById<TextView>(R.id.inputGoal)
         val submitButton = view.findViewById<Button>(R.id.submitGoal)
         val feedbackGoal = view.findViewById<TextView>(R.id.feedbackTextGoal)
 

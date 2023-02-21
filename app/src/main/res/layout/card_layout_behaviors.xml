@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cardViewBehavior"
     android:layout_margin="5dp"
-    app:cardBackgroundColor="#EDAA25"
+    app:cardBackgroundColor="@color/light_grey"
     app:cardCornerRadius="12dp"
     app:cardElevation="3dp"
     app:contentPadding="4dp"
@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/relativeLayout"
-        android:padding="16dp"
+        android:padding="10dp"
         >
 
         <ImageView
@@ -32,7 +32,8 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toRightOf="@+id/image_behavior"
             android:layout_marginStart="16dp"
-            android:textSize="24dp"
+            android:textSize="18dp"
+            android:text="Verhalten"
         />
 
         <SeekBar

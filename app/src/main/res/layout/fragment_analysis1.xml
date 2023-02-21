@@ -4,73 +4,89 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginBottom="102dp"
     tools:context=".Analysis1">
 
-    <TextView
-        android:id="@+id/zielTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Setze ein Ziel fest"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.108" />
+    <ImageView
+        android:id="@+id/header_goal"
+        android:layout_width="match_parent"
+        android:layout_height="102dp"
+        android:scaleType="centerCrop"
+        android:background="@color/light_grey"
+        tools:layout_editor_absoluteX="0dp"
+        tools:src="@drawable/watercolor_atmo2" />
 
-    <EditText
-        android:id="@+id/setGoalText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="152dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="gib ein Ziel ein"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/zielTextView" />
 
     <TextView
-        android:id="@+id/analyisisInfoTextView"
+        android:id="@+id/infoTextGoal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:text="Was macht ein gutes Ziel aus?"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/zielTextView"
-        app:layout_constraintVertical_bias="0.056" />
-
-    <Button
-        android:id="@+id/weiterZuAnalysis2Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="92dp"
-        android:text="weiter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/submitGoal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:text="Submit"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/setGoalText" />
-
-    <TextView
-        android:id="@+id/feedbackTextGoal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/submitGoal" />
+        app:layout_constraintTop_toBottomOf="@+id/header_goal" />
+
+    <TextView
+        android:id="@+id/feedbackTextGoal"
+        android:layout_width="match_parent"
+        android:layout_height="103dp"
+        android:layout_marginHorizontal="13dp"
+        android:layout_marginBottom="28dp"
+        android:background="#F0F1F1"
+        app:layout_constraintBottom_toTopOf="@id/weiterZuAnalysis2Button"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <Button
+        android:id="@+id/weiterZuAnalysis2Button"
+        android:layout_width="153dp"
+        android:layout_height="68dp"
+        android:layout_margin="13dp"
+        android:text="weiter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/inputGoal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="13dp"
+        android:layout_marginBottom="13dp"
+        android:text="Gib hier dein Ziel ein?"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        tools:layout_editor_absoluteX="13dp" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="13dp"
+        android:layout_marginBottom="13dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/feedbackTextGoal"
+        tools:layout_editor_absoluteX="13dp">
+
+        <EditText
+            android:id="@+id/editGoal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Dein Ziel" />
+
+        <Button
+            android:id="@+id/submitGoal"
+            android:layout_width="153dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:background="#010221"
+            android:text="bestätigen" />
+
+
+    </LinearLayout>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
