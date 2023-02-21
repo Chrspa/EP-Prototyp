@@ -9,7 +9,7 @@ import kotlinx.coroutines.launch
 
 class ProfileViewModel(application: Application):AndroidViewModel(application){
 
-    private val readData:LiveData<List<Profile>>
+     val readData:LiveData<List<Profile>>
     private val repository: ProfileRepository
  //   private val readnotificationZeitData:LiveData<List<Profile>>
  //   private val readgoalData: LiveData<List<Profile>>
