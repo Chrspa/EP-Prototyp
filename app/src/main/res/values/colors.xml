@@ -3,9 +3,10 @@
     <color name="primary_dark">#010221</color>
     <color name="turquoise">#0A7373</color>
     <color name="secondary_green">#B7BF99</color>
-    <color name="light_grey">##000A1E</color>
+    <color name="light_grey">#F0F1F1</color>
     <color name="accent_yellow">#EDAA25</color>
     <color name="accent_red">#C43302</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
 </resources>

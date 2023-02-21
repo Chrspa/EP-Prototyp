@@ -11,7 +11,7 @@
         android:id="@+id/header_login"
         android:layout_width="match_parent"
         android:layout_height="102dp"
-        android:background="#010221"
+        android:background="@color/light_grey"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="0dp"
         tools:src="" />
@@ -47,11 +47,12 @@
 
         <Button
             android:id="@+id/submitButton1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="153dp"
+            android:layout_height="match_parent"
             android:layout_marginLeft="20dp"
             android:background="#010221"
-            android:text="Submit" />
+            android:text="bestätigen" />
+
 
     </LinearLayout>
 
@@ -62,7 +63,7 @@
         android:layout_marginTop="45dp"
         android:textSize="20dp"
         android:textAllCaps="true"
-        android:text="Herzlich Willkommen bei xy!"
+        android:text="Herzlich Willkommen bei MIND STEPS"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
