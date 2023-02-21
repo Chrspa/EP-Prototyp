@@ -2,69 +2,46 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout8"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginBottom="102dp"
     tools:context=".Analysis5">
 
-    <TextView
-        android:id="@+id/zusammenfassungAnalysisTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:text="hier sind deine Golden Behaviour !"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView2"
-        android:layout_width="396dp"
-        android:layout_height="336dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+    <ImageView
+        android:id="@+id/header_verhalten"
+        android:layout_width="match_parent"
+        android:layout_height="102dp"
+        android:background="@color/light_grey"
+        android:scaleType="centerCrop"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5" />
+        tools:src="@drawable/watercolor_atmo2" />
 
     <TextView
-        android:id="@+id/wahlAnalysis5textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Wähle das was dir am besten gefällt:"
+        android:id="@+id/easeTextView"
+        android:layout_width="300dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="20dp"
+        android:text="Das sind deine Golden Behaviors:"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/zusammenfassungAnalysisTextView" />
+        app:layout_constraintTop_toBottomOf="@id/header_verhalten" />
 
     <Button
-        android:id="@+id/weiterZuDesignAnalysisButton"
-        android:layout_width="wrap_content"
+        android:id="@+id/weiterZuDesAnalysisButton"
+        android:layout_width="153dp"
+        android:layout_height="68dp"
+        android:layout_margin="13dp"
+        android:text="weiter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewGoldenBehaviors"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:text="weiter zum Design"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView2" />
-
-    <SeekBar
-        android:id="@+id/seekBar"
-        android:layout_width="136dp"
-        android:layout_height="22dp"
-        android:max="10"
-        tools:layout_editor_absoluteX="137dp"
-        tools:layout_editor_absoluteY="146dp" />
-
-    <TextView
-        android:id="@+id/seekbarTestText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="176dp"
-        tools:layout_editor_absoluteY="179dp" />
-
+        android:layout_marginTop="30dp"
+        android:layout_marginHorizontal="13dp"
+        app:layout_constraintTop_toBottomOf="@+id/easeTextView" />
 </androidx.constraintlayout.widget.ConstraintLayout>
