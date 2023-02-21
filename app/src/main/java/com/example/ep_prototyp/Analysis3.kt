@@ -24,7 +24,9 @@ class Analysis3 : Fragment() {
         val view = inflater.inflate(R.layout.fragment_analysis3, container, false)
 
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewRating)
-        val adapter = RecyclerAdapter(listOf("Item 1", "Item 2", "Item 3"))
+
+        //Hier muss dem Adapter die Liste mit Verhalten übergeben werden
+        val adapter = RecyclerAdapter(listOf("Verhalten 1", "Verhalten 2", "Verhalten 3"))
 
         // Adapter auf RecycleView setzen
         recyclerView.adapter = adapter
