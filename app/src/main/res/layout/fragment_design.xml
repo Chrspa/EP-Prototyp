@@ -58,7 +58,7 @@
         android:layout_width="237dp"
         android:layout_height="107dp"
         android:layout_marginTop="20dp"
-        android:text="Information zur Design Phase"
+        android:text="Hier müssten wir die Dauer/ Anzahl der Wiederholungen/ Menge festlegen lassen. Das ließe sich in der Review-Phase dann bei Bedarf anpassen (-> kleiner machen)"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/designButtonTextView" />
