@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="72dp"
-        android:text="Geben sie Verhaltensweisen ein"
+        android:text="Mit welchen Verhalten kommst du deinem Ziel näher?"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -61,6 +61,7 @@
         tools:layout_editor_absoluteY="128dp" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerBehaviors1"
         android:layout_width="331dp"
         android:layout_height="250dp"
         tools:layout_editor_absoluteX="40dp"

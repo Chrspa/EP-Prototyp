@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.RecyclerView
 
 
 class Analysis2 : Fragment() {
@@ -31,7 +32,8 @@ class Analysis2 : Fragment() {
         val setBehavior = view.findViewById<TextView>(R.id.eingabeVerhalten)
         val submitButton = view.findViewById<Button>(R.id.submitBehavior)
         val feedback = view.findViewById<TextView>(R.id.feedbackBehavior)
-        //val listOfBehaviors = ...
+        val recycler = view.findViewById<RecyclerView>(R.id.recyclerBehaviors1)
+        val listOfBehaviors = mutableListOf<String>("Push-Ups", "Liegestütz", "Squats", "Plank")
 
         submitButton.setOnClickListener(){
             val behavior = setBehavior.text
@@ -39,9 +41,11 @@ class Analysis2 : Fragment() {
                 feedback.text = "Bitte gib ein Verhalten ein."
             }
             else {
-                //Verhalten speichern (room) + in Liste anzeigen
+                //Verhalten speichern (room) + in RecyclerView anzeigen
+                recycler
             }
         }
+
 
 
         return view

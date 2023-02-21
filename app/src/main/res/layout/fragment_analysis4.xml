@@ -9,10 +9,10 @@
 
     <TextView
         android:id="@+id/einfachheitTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="283dp"
+        android:layout_height="43dp"
         android:layout_marginTop="48dp"
-        android:text="Gib die Einfachheit der Verhalten ein"
+        android:text="Wie leicht fällt es dir, die Verhaltensweisen auszuführen?"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,7 +30,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/recyclerViewRating"
         android:layout_width="389dp"
         android:layout_height="508dp"
         app:layout_constraintBottom_toBottomOf="parent"

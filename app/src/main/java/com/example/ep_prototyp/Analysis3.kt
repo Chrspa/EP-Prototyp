@@ -1,5 +1,6 @@
 package com.example.ep_prototyp
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,10 +8,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.ep_prototyp.R
 
 
 class Analysis3 : Fragment() {
+
+    private var layoutManager : RecyclerView.LayoutManager? = null
+    private var adapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>? = null
+    private lateinit var recyclerView: RecyclerView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,6 +32,11 @@ class Analysis3 : Fragment() {
             //alle Eingaben müssen gemacht sein, bevor "Weiter" geklickt werden kann
             findNavController().navigate(R.id.action_analysis3_to_analysis4)
         }
+
+        recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewRating)
+        adapter = RecyclerAdapter()
+        recyclerView.adapter = adapter
+
 
 
 

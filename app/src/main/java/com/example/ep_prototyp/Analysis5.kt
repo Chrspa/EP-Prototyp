@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.SeekBar
 import androidx.navigation.fragment.findNavController
 import com.example.ep_prototyp.R
 
@@ -25,6 +26,20 @@ class Analysis5 : Fragment() {
             findNavController().navigate(R.id.action_analysis5_to_design)
 
         }
+
+        val seekBar = view.findViewById<SeekBar>(R.id.seekBar)
+        var value = 0
+
+        seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                value = progress
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {}
+
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {}
+        })
+
 
 
 
