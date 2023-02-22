@@ -5,29 +5,85 @@
     android:id="@+id/frameLayout6"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginBottom="102dp"
     tools:context=".PracticeMain">
 
     <TextView
-        android:id="@+id/PracticetextView"
+        android:id="@+id/headerPractice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Practice Phase"
-        tools:layout_editor_absoluteX="158dp"
-        tools:layout_editor_absoluteY="16dp" />
+        android:layout_marginTop="30dp"
+        android:text="PRACTICE"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/PracticeInfotextView"
-        android:layout_width="164dp"
-        android:layout_height="107dp"
-        android:text="PracticeInfo"
-        tools:layout_editor_absoluteX="123dp"
-        tools:layout_editor_absoluteY="112dp" />
+        android:id="@+id/infoTextPractice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="45dp"
+        android:layout_marginTop="45dp"
+        android:text="@string/explanationPractice"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headerPractice" />
+
+    <TextView
+        android:id="@+id/recipePlaceholder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Hier nochmal Rezept anzeigen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/infoTextPractice" />
+
+    <TextView
+        android:id="@+id/infoTextPractice2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="45dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/explanationFeedback"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recipePlaceholder" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Klicke hier für mehr Infos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/infoTextPractice2" />
 
     <Button
         android:id="@+id/weiterZuPractice2Button"
-        android:layout_width="117dp"
-        android:layout_height="61dp"
-        android:text="weiter"
-        tools:layout_editor_absoluteX="147dp"
-        tools:layout_editor_absoluteY="644dp" />
+        android:layout_width="153dp"
+        android:layout_height="68dp"
+        android:layout_margin="13dp"
+        android:text="feedback"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/notificationButton"
+        android:layout_width="153dp"
+        android:layout_height="68dp"
+        android:layout_margin="13dp"
+        android:text="notification"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

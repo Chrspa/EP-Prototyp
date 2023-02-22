@@ -3,31 +3,45 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/frameLayout7"
+    android:layout_marginBottom="102dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Review">
 
     <TextView
-        android:id="@+id/ReviewtextView"
-        android:layout_width="110dp"
-        android:layout_height="42dp"
-        android:text="Review Phase"
-        tools:layout_editor_absoluteX="150dp"
-        tools:layout_editor_absoluteY="50dp" />
+        android:id="@+id/headerReview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="REVIEW"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/ReviewInfotextView"
-        android:layout_width="186dp"
-        android:layout_height="147dp"
-        android:text="Review Informationen"
-        tools:layout_editor_absoluteX="112dp"
-        tools:layout_editor_absoluteY="292dp" />
+        android:id="@+id/infoTextPractice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="45dp"
+        android:layout_marginTop="45dp"
+        android:text="@string/explanationReview"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headerReview" />
 
     <Button
         android:id="@+id/weiterZuReview2Button"
-        android:layout_width="116dp"
-        android:layout_height="56dp"
-        android:text="weiter"
-        tools:layout_editor_absoluteX="147dp"
-        tools:layout_editor_absoluteY="644dp" />
+        android:layout_width="153dp"
+        android:layout_height="68dp"
+        android:layout_margin="13dp"
+        android:text="feedback"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

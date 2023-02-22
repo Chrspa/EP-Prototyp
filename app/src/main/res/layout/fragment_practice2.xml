@@ -2,39 +2,44 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout11"
+    android:id="@+id/frameLayout6"
+    android:layout_marginBottom="102dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".practice2">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="207dp"
-        android:layout_height="54dp"
-        android:layout_marginTop="16dp"
-        android:text="Habbit Entwicklung für *HABIT*"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/headerPractice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="PRACTICE"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/weiterZuReviewButton"
-        android:layout_width="114dp"
-        android:layout_height="58dp"
-        android:text="vorzeitig Beenden"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.929"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.956" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45dp"
+            android:layout_marginHorizontal="13dp"
+            app:layout_constraintTop_toBottomOf="@id/headerPractice"
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="369dp"
-        android:layout_height="518dp"
-        android:layout_marginTop="19dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+            />
+
+        <Button
+            android:id="@+id/weiterZuReviewButton"
+            android:layout_width="153dp"
+            android:layout_height="68dp"
+            android:layout_margin="13dp"
+            android:text="vorzeitig beenden"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+

@@ -28,10 +28,6 @@ class Design : Fragment() {
 
         }
 
-        textDesign.text = "Super, du hast die Analyse-Phase erfolgreich durchlaufen und ein Golden Habit für dein Verhaltensrezept ausgewählt. \n\n " +
-                "Als nächstes legst du einen Umfang für dein Verhalten fest. Dies kann eine Zeitangabe sein oder eine feste Anzahl an Wiederholungen." +
-                "Für Beispiele klicke hier."
-
         return view
     }
 }

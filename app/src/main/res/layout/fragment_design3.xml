@@ -27,7 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="45dp"
-        android:text="@string/recipe"
+        android:text="@string/explanationRecipe"
         android:layout_marginTop="45dp"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"

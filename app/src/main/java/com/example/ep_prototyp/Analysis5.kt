@@ -32,8 +32,6 @@ class Analysis5 : Fragment() {
 
 
 
-
-
         return view
     }
 }
