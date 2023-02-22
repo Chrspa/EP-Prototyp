@@ -46,8 +46,10 @@ class LoginScreen : Fragment() {
         }
 
         submitButton.setOnClickListener {
-            insertDatatoDatabase()
-            LoadData()
+          //  addBehaviour()
+            delete()
+            loadBehaviour()
+
         }
 
         return view
@@ -55,23 +57,70 @@ class LoginScreen : Fragment() {
 
     private fun insertDatatoDatabase() {
         val name = view?.findViewById<EditText>(R.id.editNametext)?.text.toString()
-        if(name!==null){
-            val profile= Profile(0,name,null,null)
-            mProfileViewModel.createProfile(profile)
+        if(name.length>1){
+
+            mProfileViewModel.createProfile(Profile(0,name))
             Toast.makeText(requireContext(),"hat Funktioniert!",Toast.LENGTH_LONG).show()
         }else{
             Toast.makeText(requireContext(),"bitte Namen eingeben!",Toast.LENGTH_LONG).show()
         }
     }
-    private fun LoadData(){
+    private fun loadData(){
         val data = requireView().findViewById<TextView>(R.id.InputNameRequestText)
 
-        mProfileViewModel.readData.observe(viewLifecycleOwner, Observer{ profil ->
-            data.text = profil[0].goal.toString()
+        mProfileViewModel.readData.observe(viewLifecycleOwner, Observer{ profile ->
+            data.text = profile.toString()
+        })
+
+    }
+
+    private fun addBehaviour(){
+        val name = view?.findViewById<EditText>(R.id.editNametext)?.text.toString()
+        if(name.length>1){
+            Behaviour(0,name)
+            mProfileViewModel.addBehaviour(Behaviour(0,name))
+            Toast.makeText(requireContext(),"hat Funktioniert!",Toast.LENGTH_LONG).show()
+        }else{
+            Toast.makeText(requireContext(),"bitte Namen eingeben!",Toast.LENGTH_LONG).show()
+        }
+    }
+    private fun loadBehaviour(){
+        val data = requireView().findViewById<TextView>(R.id.InputNameRequestText)
+
+        mProfileViewModel.readBehaviour
+            .observe(viewLifecycleOwner, Observer{ behaviour ->
+            data.text = behaviour.toString()
 
         })
 
     }
+
+
+    private fun updateProfile(){
+        var name = view?.findViewById<EditText>(R.id.editNametext)?.text.toString()
+        mProfileViewModel.readData.observe(viewLifecycleOwner, Observer{ profile ->
+            mProfileViewModel.updateProfile(Profile(1,name,profile[0].notificationZeit,profile[0].goal))
+        })
+
+    }
+    private fun delete(){
+        var name = view?.findViewById<EditText>(R.id.editNametext)?.text.toString()
+        mProfileViewModel.readBehaviour.observe(viewLifecycleOwner, Observer{ behaviour ->
+            for(i in behaviour){
+                if(i.beschreibung==name) mProfileViewModel.deleteBehaviour(i)
+            }
+
+            })
+
+
+
+
+
+
+    }
+
+
+
 
 
 }

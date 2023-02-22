@@ -14,20 +14,20 @@ class ProfileViewModel(application: Application):AndroidViewModel(application){
  //   private val readnotificationZeitData:LiveData<List<Profile>>
  //   private val readgoalData: LiveData<List<Profile>>
  //   private val readwiederholIntervallData: LiveData<List<Profile>>
-   // private val readRezeptData: LiveData<List<Rezept>>
-   // private val readWeekData: LiveData<List<Week>>
-   // private val readListeBehaviour: LiveData<List<Behaviour>>
+    val readRezeptData: LiveData<List<Rezept>>
+    val readWeekData: LiveData<List<Week>>
+    val readBehaviour: LiveData<List<Behaviour>>
 
     init {
         val profileDao = ProfileDatabase.getDatabase(application).profileDao()
         repository = ProfileRepository(profileDao)
         readData = repository.readData
-     /*   readnotificationZeitData = repository.readNotificationZeitData
-        readgoalData = repository.readgoalData
-        readwiederholIntervallData = repository.readwiederholIntervallData
+       // readnotificationZeitData = repository.readNotificationZeitData
+       // readgoalData = repository.readgoalData
+       // readwiederholIntervallData = repository.readwiederholIntervallData
         readRezeptData = repository.readRezeptData
         readWeekData = repository.readWeekData
-        readListeBehaviour = repository.readListeBehaviour */
+        readBehaviour = repository.readListeBehaviour
     }
 
     fun createProfile(profile: Profile){
@@ -35,80 +35,67 @@ class ProfileViewModel(application: Application):AndroidViewModel(application){
             repository.createProfile(profile)
         }
     }
-/*
-    fun addBehaviour(beschreibung:String,einfachheit:Int,effizienz:Int){
+
+    fun addBehaviour(behaviour: Behaviour){
         viewModelScope.launch(Dispatchers.IO){
-            repository.addBehaviour(beschreibung,einfachheit,effizienz)
+            repository.addBehaviour(behaviour)
         }
     }
 
-    fun addRezept(rezeptBehaviour:String,rezeptCelebration:Char,rezeptPrompt:Char){
+    fun addRezept(rezept: Rezept){
         viewModelScope.launch(Dispatchers.IO){
-            repository.addRezept(rezeptBehaviour,rezeptCelebration,rezeptPrompt)
+            repository.addRezept(rezept)
         }
     }
 
-    fun addWeek(wiederholIntervall:Int){
+    fun addWeek(week: Week){
         viewModelScope.launch(Dispatchers.IO){
-            repository.addWeek(wiederholIntervall)
+            repository.addWeek(week)
+        }
+    }
+    fun updateProfile(profile: Profile){
+        viewModelScope.launch(Dispatchers.IO){
+            repository.updateProfil(profile)
         }
     }
 
-    fun updateName(vorname: Char,nachname: Char){
+    fun updateBehaviour(behaviour: Behaviour){
         viewModelScope.launch(Dispatchers.IO){
-            repository.updateName(vorname,nachname)
+            repository.updateBehaviour(behaviour)
         }
     }
 
-    fun updatenotificationZeit(notificationZeit: Int){
+    fun updateRezept(rezept: Rezept){
         viewModelScope.launch(Dispatchers.IO){
-            repository.updatenotificationZeit(notificationZeit)
+            repository.updateRezept(rezept)
         }
     }
 
-    fun updategoal(goal: String){
+    fun updateWeek(week: Week){
         viewModelScope.launch(Dispatchers.IO){
-            repository.updategoal(goal)
+            repository.updateWeek(week)
         }
     }
 
-    fun updateBehaviour(beschreibung:String,einfachheit:Int,effizienz:Int){
+    fun deleteBehaviour(behaviour: Behaviour){
         viewModelScope.launch(Dispatchers.IO){
-            repository.updateBehaviour(beschreibung,einfachheit,effizienz)
+            repository.deleteBehaviour(behaviour)
         }
     }
 
-    fun updateRezept(rezeptBehaviour:String,rezeptCelebration:Char, rezeptPrompt:Char){
+    fun deleteRezept(rezept: Rezept){
         viewModelScope.launch(Dispatchers.IO){
-            repository.updateRezept(rezeptBehaviour,rezeptCelebration, rezeptPrompt)
+            repository.deleteRezept(rezept)
         }
     }
 
-    fun updateWeek(tag:String,erledigt:Boolean){
+    fun deleteWeek(week: Week){
         viewModelScope.launch(Dispatchers.IO){
-            repository.updateWeek(tag,erledigt)
+            repository.deleteWeek(week)
         }
     }
 
-    fun deleteBehaviour(beschreibung: String){
-        viewModelScope.launch(Dispatchers.IO){
-            repository.deleteBehaviour(beschreibung)
-        }
-    }
 
-    fun deleteRezept(beschreibung: String){
-        viewModelScope.launch(Dispatchers.IO){
-            repository.deleteRezept(beschreibung)
-        }
-    }
-
-    fun deleteWeek(beschreibung: String){
-        viewModelScope.launch(Dispatchers.IO){
-            repository.deleteWeek(beschreibung)
-        }
-    }
-
-*/
 
 
 }
