@@ -27,21 +27,12 @@ class Analysis1 : Fragment() {
             findNavController().navigate(R.id.action_analysis1_to_analysis2)
         }
 
-        val setGoal = view.findViewById<TextView>(R.id.inputGoal)
+        val setGoal = view.findViewById<TextView>(R.id.editGoal)
         val submitButton = view.findViewById<Button>(R.id.submitGoal)
-        val feedbackGoal = view.findViewById<TextView>(R.id.feedbackTextGoal)
+
 
         submitButton.setOnClickListener(){
-            val goal = setGoal.text
-            //hier Ziel speichern (room)
-            if (setGoal.text.toString() == "gib dein Ziel ein" || setGoal.text.toString() == ""){
-                feedbackGoal.text = "Bitte gib ein Ziel ein."
-            }
-            else {
-                feedbackGoal.text = "Dein Ziel lautet $goal." +
-                        "Sind alle Kriterien für ein gutes Ziel erfüllt? Dann klicke auf \"Weiter\"" +
-                        "Du kannst noch etwas verbessern? Dann gib dein Ziel erneut ein!"
-            }
+            //muss neu wegen Layout-Änderungen
         }
 
         return view

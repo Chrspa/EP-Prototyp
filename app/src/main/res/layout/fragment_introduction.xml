@@ -34,7 +34,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="68dp"
-        android:layout_marginHorizontal="13dp"
+        android:layout_marginHorizontal="45dp"
         android:text="Menschen scheitern immer wieder daran, selbstgesetzte Vorsätze einzuhalten und geben sich oft selbst die Schuld daran. \n\n Dabei ist mangelnde Disziplin gar nicht das Problem!"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

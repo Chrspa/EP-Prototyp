@@ -31,18 +31,11 @@ class Analysis2 : Fragment() {
 
         val setBehavior = view.findViewById<TextView>(R.id.editBehavior)
         val submitButton = view.findViewById<Button>(R.id.submitBehavior)
-        val feedback = view.findViewById<TextView>(R.id.feedbackTextBehavior)
+
         val listOfBehaviors = mutableListOf<String>("Push-Ups", "Liegestütz", "Squats", "Plank")
 
         submitButton.setOnClickListener(){
-            val behavior = setBehavior.text
-            if (setBehavior.text.toString() == "Gib ein Verhalten ein" || setBehavior.text.toString() == ""){
-                feedback.text = "Bitte gib ein Verhalten ein."
-            }
-            else {
-                //Verhalten speichern (room) + in RecyclerView anzeigen
-
-            }
+            //muss neu wegen Layout-Änderungen
         }
 
 
