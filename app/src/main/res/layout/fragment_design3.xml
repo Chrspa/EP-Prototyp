@@ -38,7 +38,7 @@
 
 
     <Button
-        android:id="@+id/weiterZuDesign2Button"
+        android:id="@+id/weiterZuPracticeButton"
         android:layout_width="153dp"
         android:layout_height="68dp"
         android:layout_margin="13dp"
