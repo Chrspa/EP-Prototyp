@@ -25,7 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="45dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="45dp"
         android:text="Wie schätzt du die Effektivität der Verhaltensweisen in Bezug auf dein Ziel ein?"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
