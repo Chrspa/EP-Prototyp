@@ -31,7 +31,6 @@ class LoginScreen : Fragment() {
         val buttonAnalysis1=view.findViewById<Button>(R.id.weiterZuAnalysisLoginButton)
         val submitButton= view.findViewById<Button>(R.id.submitButton1)
 
-        mProfileViewModel= ViewModelProvider(this).get(ProfileViewModel::class.java)
 
 
 
@@ -68,7 +67,7 @@ class LoginScreen : Fragment() {
         val data = requireView().findViewById<TextView>(R.id.InputNameRequestText)
 
         mProfileViewModel.readData.observe(viewLifecycleOwner, Observer{ profil ->
-            data.text = profil.toString()
+            data.text = profil[0].goal.toString()
 
         })
 
