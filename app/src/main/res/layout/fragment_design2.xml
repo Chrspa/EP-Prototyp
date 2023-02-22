@@ -24,9 +24,10 @@
 
     <TextView
         android:id="@+id/textViewDesign1"
-        android:layout_width="284dp"
-        android:layout_height="235dp"
-        android:layout_marginTop="44dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="45dp"
+        android:layout_marginTop="45dp"
         android:text="@string/explanationPrompt"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,12 +36,13 @@
         app:layout_constraintTop_toBottomOf="@+id/headerDesign" />
 
     <LinearLayout
+        android:id="@+id/linearLayoutBehaviorSize"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="13dp"
-        android:layout_marginVertical="20dp"
+        android:layout_marginBottom="20dp"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/textViewDesign1">
+        app:layout_constraintBottom_toTopOf="@+id/weiterZuDesign3Button">
 
         <EditText
             android:id="@+id/editBehaviorSize"
@@ -49,7 +51,7 @@
             android:layout_gravity="left"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="10 min" />
+            android:text="einen Kaffee trinke" />
 
         <View
             android:layout_width="0dp"
@@ -67,12 +69,21 @@
 
 
     <Button
-        android:id="@+id/weiterZuDesign2Button"
+        android:id="@+id/weiterZuDesign3Button"
         android:layout_width="153dp"
         android:layout_height="68dp"
         android:layout_margin="13dp"
         android:text="weiter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="13dp"
+        android:text="Immer wenn ich..."
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayoutBehaviorSize" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
