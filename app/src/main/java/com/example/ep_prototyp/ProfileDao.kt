@@ -7,6 +7,7 @@ import androidx.room.*
 @Dao
 interface ProfileDao {
 
+
     //Erstellen von Datensätzen
     @Insert
     suspend fun createProfile(profile: Profile)
