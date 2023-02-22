@@ -7,36 +7,32 @@
     android:layout_marginBottom="102dp"
     tools:context=".Analysis2">
 
-    <ImageView
-        android:id="@+id/header_verhalten"
-        android:layout_width="match_parent"
-        android:layout_height="102dp"
-        android:scaleType="centerCrop"
-        android:background="@color/light_grey"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/watercolor_atmo2" />
-
-
     <TextView
-        android:id="@+id/infoTextVerhalten"
+        android:id="@+id/header_goal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Was macht ein gutes Verhalten aus?"
+        android:layout_marginTop="30dp"
+        android:text="ANALYSE"
+        android:textStyle="bold"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/header_verhalten" />
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <TextView
-        android:id="@+id/feedbackTextBehavior"
-        android:layout_width="match_parent"
-        android:layout_height="103dp"
-        android:layout_marginHorizontal="13dp"
-        android:layout_marginBottom="28dp"
-        android:background="#F0F1F1"
-        app:layout_constraintBottom_toTopOf="@id/weiterZuAnalysis3Button"
-        tools:layout_editor_absoluteX="16dp" />
+        android:id="@+id/infoTextBehavior"
+        android:layout_width="284dp"
+        android:layout_height="235dp"
+        android:text="@string/explanationBehavior"
+        android:layout_marginTop="45dp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header_goal" />
+
 
     <Button
         android:id="@+id/weiterZuAnalysis3Button"
@@ -47,40 +43,35 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
-    <TextView
-        android:id="@+id/inputBehavior"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="13dp"
-        android:layout_marginBottom="13dp"
-        android:text="Gib mindestens 5 Verhalten ein"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintLeft_toLeftOf="parent"
-        tools:layout_editor_absoluteX="13dp" />
+
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="13dp"
-        android:layout_marginBottom="13dp"
+        android:layout_marginVertical="20dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/feedbackTextBehavior"
+        app:layout_constraintTop_toBottomOf="@+id/infoTextBehavior"
         tools:layout_editor_absoluteX="13dp">
 
         <EditText
-            android:id="@+id/editBehavior"
+            android:id="@+id/editGoal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Dein Verhalten" />
+            android:text="Gitarre spielen lernen" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
 
         <Button
-            android:id="@+id/submitBehavior"
+            android:id="@+id/submitGoal"
             android:layout_width="153dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="20dp"
             android:text="bestätigen" />
 
 

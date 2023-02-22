@@ -2,99 +2,77 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout9"
+    android:id="@+id/frameLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginBottom="102dp"
     tools:context=".Design2">
 
+
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/headerDesign"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Hier wird dein Rezept erstellt:"
+        android:layout_marginTop="30dp"
+        android:text="DESIGN"
+        android:textStyle="bold"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/textViewDesign1"
+        android:layout_width="284dp"
+        android:layout_height="235dp"
+        android:layout_marginTop="44dp"
+        android:text="@string/explanationPrompt"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headerDesign" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="13dp"
+        android:layout_marginVertical="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDesign1">
+
+        <EditText
+            android:id="@+id/editBehaviorSize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="10 min" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <Button
+            android:layout_width="153dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:text="bestätigen" />
+
+
+    </LinearLayout>
+
+
     <Button
-        android:id="@+id/weiterZuDesign3Button"
-        android:layout_width="195dp"
-        android:layout_height="66dp"
-        android:layout_marginBottom="16dp"
+        android:id="@+id/weiterZuDesign2Button"
+        android:layout_width="153dp"
+        android:layout_height="68dp"
+        android:layout_margin="13dp"
         android:text="weiter"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="322dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="9dp"
-        android:text="werde ich * VERHALTEN* ausführen"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
-
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="112dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="65dp"
-        android:text="Immer wenn ich"
-        app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName2"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/infoRezeptTextView" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName2"
-        android:layout_width="164dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="65dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Aufstehe"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/textView9"
-        app:layout_constraintTop_toBottomOf="@+id/infoRezeptTextView" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName5"
-        android:layout_width="168dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Tanzen"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/textView11"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
-
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="113dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="8dp"
-        android:text="Danach werde ich"
-        app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName5"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
-
-    <TextView
-        android:id="@+id/infoRezeptTextView"
-        android:layout_width="244dp"
-        android:layout_height="184dp"
-        android:layout_marginTop="25dp"
-        android:text="Hier werden Infos zum Rezept Stehen"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        app:layout_constraintRight_toRightOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,72 +5,74 @@
     android:id="@+id/frameLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginBottom="102dp"
     tools:context=".Design">
 
-    <TextView
-        android:id="@+id/DesignTextView"
-        android:layout_width="279dp"
-        android:layout_height="28dp"
-        android:text="erarbeitung eines Rezeptes für *Habit* "
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.53"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.364" />
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="281dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="24dp"
-        android:text="wie oft möchtest du dieses Habit machen?"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/DesignTextView" />
-
-    <SeekBar
-        android:id="@+id/seekBar8"
-        style="@style/Widget.AppCompat.SeekBar.Discrete"
-        android:layout_width="314dp"
-        android:layout_height="76dp"
-        android:layout_marginTop="16dp"
-        android:max="10"
-        android:progress="3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-    <TextView
-        android:id="@+id/designButtonTextView"
+        android:id="@+id/headerDesign"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="DesignPhase"
+        android:layout_marginTop="30dp"
+        android:text="DESIGN"
+        android:textStyle="bold"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView8"
-        android:layout_width="237dp"
-        android:layout_height="107dp"
-        android:layout_marginTop="20dp"
-        android:text="Hier müssten wir die Dauer/ Anzahl der Wiederholungen/ Menge festlegen lassen. Das ließe sich in der Review-Phase dann bei Bedarf anpassen (-> kleiner machen)"
+        android:id="@+id/infoTextDesign1"
+        android:layout_width="284dp"
+        android:layout_height="235dp"
+        android:text="@string/explanationDesign"
+        android:layout_marginTop="45dp"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/designButtonTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/headerDesign" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="13dp"
+        android:layout_marginVertical="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/infoTextDesign1">
+
+        <EditText
+            android:id="@+id/editBehaviorSize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="10 min" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <Button
+            android:layout_width="153dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:text="bestätigen" />
+
+
+    </LinearLayout>
+
 
     <Button
         android:id="@+id/weiterZuDesign2Button"
-        android:layout_width="271dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="24dp"
-        android:text="Weiter"
+        android:layout_width="153dp"
+        android:layout_height="68dp"
+        android:layout_margin="13dp"
+        android:text="weiter"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintRight_toRightOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

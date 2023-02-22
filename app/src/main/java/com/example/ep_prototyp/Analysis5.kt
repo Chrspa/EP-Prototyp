@@ -27,18 +27,9 @@ class Analysis5 : Fragment() {
 
         }
 
-        val seekBar = view.findViewById<SeekBar>(R.id.seekBar)
+
         var value = 0
 
-        seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
-            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                value = progress
-            }
-
-            override fun onStartTrackingTouch(seekBar: SeekBar?) {}
-
-            override fun onStopTrackingTouch(seekBar: SeekBar?) {}
-        })
 
 
 

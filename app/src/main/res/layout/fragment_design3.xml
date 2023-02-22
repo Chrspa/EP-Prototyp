@@ -2,53 +2,77 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout10"
+    android:id="@+id/frameLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginBottom="102dp"
     tools:context=".Design3">
 
+
     <TextView
-        android:id="@+id/designFertigtextView"
+        android:id="@+id/headerDesign"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:text="dein Design für dein Behaviour ist fertig!"
+        android:layout_marginTop="30dp"
+        android:text="DESIGN"
+        android:textStyle="bold"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/fertigesDesigntextView"
-        android:layout_width="243dp"
-        android:layout_height="116dp"
-        android:layout_marginTop="40dp"
-        android:text="Immer wenn ich esse werde ich miauen ausführen. Danach werde ich Springen"
-        android:textSize="20sp"
+        android:id="@+id/textViewDesign1"
+        android:layout_width="284dp"
+        android:layout_height="235dp"
+        android:text="@string/explanationDesign"
+        android:layout_marginTop="45dp"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/designFertigtextView" />
+        app:layout_constraintTop_toBottomOf="@+id/headerDesign" />
 
-    <TextView
-        android:id="@+id/HabitInfotextView"
-        android:layout_width="215dp"
-        android:layout_height="149dp"
-        android:text="Info zum Habit"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="13dp"
+        android:layout_marginVertical="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDesign1">
+
+        <EditText
+            android:id="@+id/editBehaviorSize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="10 min" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <Button
+            android:layout_width="153dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:text="bestätigen" />
+
+
+    </LinearLayout>
+
 
     <Button
-        android:id="@+id/weiterZuPracticeDesignButton"
-        android:layout_width="279dp"
-        android:layout_height="57dp"
+        android:id="@+id/weiterZuDesign2Button"
+        android:layout_width="153dp"
+        android:layout_height="68dp"
+        android:layout_margin="13dp"
         android:text="weiter"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintRight_toRightOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

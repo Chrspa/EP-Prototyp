@@ -6,11 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import androidx.navigation.fragment.findNavController
 import com.example.ep_prototyp.R
 
 class Design : Fragment() {
 
+    lateinit var textDesign : TextView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,7 +28,9 @@ class Design : Fragment() {
 
         }
 
-
+        textDesign.text = "Super, du hast die Analyse-Phase erfolgreich durchlaufen und ein Golden Habit für dein Verhaltensrezept ausgewählt. \n\n " +
+                "Als nächstes legst du einen Umfang für dein Verhalten fest. Dies kann eine Zeitangabe sein oder eine feste Anzahl an Wiederholungen." +
+                "Für Beispiele klicke hier."
 
         return view
     }

@@ -7,14 +7,18 @@
     android:layout_marginBottom="102dp"
     tools:context=".Analysis3">
 
-    <ImageView
+    <TextView
         android:id="@+id/header_verhalten"
-        android:layout_width="match_parent"
-        android:layout_height="102dp"
-        android:background="@color/light_grey"
-        android:scaleType="centerCrop"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/watercolor_atmo2" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="ANALYSE"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/efficiencyTextView"
