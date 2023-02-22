@@ -73,7 +73,7 @@
         app:layout_constraintTop_toBottomOf="@id/infoTextPractice2" />
 
     <Button
-        android:id="@+id/weiterZuPractice2Button"
+        android:id="@+id/weiterZuReviewButton"
         android:layout_width="153dp"
         android:layout_height="68dp"
         android:layout_margin="13dp"

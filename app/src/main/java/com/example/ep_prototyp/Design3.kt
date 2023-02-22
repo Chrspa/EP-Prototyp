@@ -26,7 +26,6 @@ class Design3 : Fragment() {
         }
 
 
-
         return view
     }
 }

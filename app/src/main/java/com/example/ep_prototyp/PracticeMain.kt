@@ -18,7 +18,7 @@ class PracticeMain : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_practice_main, container, false)
 
-        val button=view.findViewById<Button>(R.id.weiterZuPractice2Button)
+        val button=view.findViewById<Button>(R.id.weiterZuReviewButton)
 
         button.setOnClickListener {
             findNavController().navigate(R.id.action_practice1_to_practice2)
