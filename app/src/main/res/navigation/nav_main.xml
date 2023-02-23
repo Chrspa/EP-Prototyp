@@ -86,8 +86,8 @@
         android:label="fragment_review"
         tools:layout="@layout/fragment_review" >
         <action
-            android:id="@+id/action_review_to_review2"
-            app:destination="@id/review2" />
+            android:id="@+id/action_review_to_review2b"
+            app:destination="@id/review2b" />
     </fragment>
     <fragment
         android:id="@+id/analysis5"
@@ -126,21 +126,6 @@
             app:destination="@id/review" />
     </fragment>
     <fragment
-        android:id="@+id/review2"
-        android:name="com.example.ep_prototyp.review2"
-        android:label="fragment_review2"
-        tools:layout="@layout/fragment_review2" >
-        <action
-            android:id="@+id/action_review2_to_analysis1"
-            app:destination="@id/analysis1" />
-        <action
-            android:id="@+id/action_review2_to_design"
-            app:destination="@id/design" />
-        <action
-            android:id="@+id/action_review2_to_practice1"
-            app:destination="@id/practice1" />
-    </fragment>
-    <fragment
         android:id="@+id/design2b"
         android:name="com.example.ep_prototyp.Design2b"
         android:label="fragment_design2b"
@@ -148,5 +133,20 @@
         <action
             android:id="@+id/action_design2b_to_design3"
             app:destination="@id/design3" />
+    </fragment>
+    <fragment
+        android:id="@+id/review2b"
+        android:name="com.example.ep_prototyp.Review2b"
+        android:label="fragment_review2b"
+        tools:layout="@layout/fragment_review2b" >
+        <action
+            android:id="@+id/action_review2b_to_analysis1"
+            app:destination="@id/analysis1" />
+        <action
+            android:id="@+id/action_review2b_to_design"
+            app:destination="@id/design" />
+        <action
+            android:id="@+id/action_review2b_to_practice1"
+            app:destination="@id/practice1" />
     </fragment>
 </navigation>

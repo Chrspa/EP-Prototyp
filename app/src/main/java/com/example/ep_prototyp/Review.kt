@@ -21,7 +21,7 @@ class Review : Fragment() {
         val button=view.findViewById<Button>(R.id.weiterZuReview2Button)
 
         button.setOnClickListener {
-            findNavController().navigate(R.id.action_review_to_review2)
+            findNavController().navigate(R.id.action_review_to_review2b)
 
         }
 
