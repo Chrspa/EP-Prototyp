@@ -2,7 +2,7 @@
     <string name="app_name">EP-Prototyp</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="explanationGoal">Jetzt kann es losgehen! \n\n Als erstes setzt du ein Ziel fest. Ein Ziel ist ein Zustand, der in der Zukunft liegt und den du erreichen möchtest. \n\n Wir unterscheiden "Ziele" von "Verhalten", die im nächsten Schritt festgelegt werden. \n\n Beispiele für gute Ziele findest du hier.</string>
+    <string name="explanationGoal">Jetzt kann es losgehen! \n\n Als erstes setzt du ein Ziel fest. Ein Ziel ist ein Zustand, der in der Zukunft liegt und den du erreichen möchtest. \n\n Wir unterscheiden "Ziele" von "Verhalten", die im nächsten Schritt festgelegt werden.</string>
     <string name="explanationBehavior">In diesem Schritt sammelst du möglichst viele Verhalten, die dir helfen, dein Ziel zu erreichen. \n\n Deiner Fantasie sind keine Grenzen gesetzt, trag alles ein, was dir einfällt! Wir werden im weiteren Verlauf genau analysieren, welche sich für dich eignen. \n\n Beispiele für passende Verhalten findest du hier.</string>
     <string name="explanationDesign">Super, du hast die Analyse-Phase erfolgreich durchlaufen und ein Golden Habit für dein Verhaltensrezept ausgewählt! \n\n Als nächstes legst du eine Zeitangabe oder eine Anzahl an Wiederholungen für dein Verhalten fest. \n\n Stell dir einen besonders stressigen und motivationslosen Tag vor - der Umfang sollte klein genug sein, dass du es trotzdem schaffst, das Verhalten auszuführen! \n\n Für Beispiele klicke hier.</string>
     <string name="explanationPrompt">Es gilt nun, dein Verhalten an einen Prompt zu binden. Ein guter Prompt ist etwas, das bereits in deinem Alltag vorhanden ist. Du wirst dein Verhalten immer dann ausführen, wenn der Prompt auftritt. \n\n Durch die stetige Wiederholung entsteht eine Verknüpfung in deinem Gehirn und das Verhalten wird mit der Zeit zur Gewohnheit. \n\n Beispiele für gute Prompts findest du hier.</string>
@@ -12,5 +12,26 @@
     <string name="explanationFeedback">Klicke den Notification-Button, um dich an dein tägliches Feedback zu erinnern. Klicke den Feedback-Button, um dein Feedback für den laufenden Tag einzutragen.</string>
     <string name="infoReview">Wenn du uns regelmäßig Feedback zu deinen Erfolgen gibst, können wir dich bei der Anpassung deines Rezeptes besser unterstützen. \n\n Nach Ablauf einer Woche beginnt automatisch die Review-Phase, in der dein Rezept bei Bedarf angepasst werden kann. \n\n Solltest du kein Feedback eintragen, ist das auch gar nicht schlimm! Du kannst auch im Review noch deine Einschätzung abgeben und dein Rezept nach deinen Vorstellungen anpassen. \n\n Wenn du die Practice-Phase vorzeitig beenden möchtest, wähle den Weg über den Feedback-Button.</string>
     <string name="explanationReview">Muss noch geschrieben werden</string>
+
+    <string name="examplesGoal">
+        \u2022 Sportlich fit werden\n
+        \u2022 Eine echte Leseratte werden\n
+        \u2022 Klavier spielen lernen\n
+        \u2022 Meine Zahnpflege verbessern\n
+        \u2022 Klavier spielen lernen\n
+        \u2022 Meinen Uni-Abschluss schaffen\n
+    </string>
+
+    <string name="examplesBehavior">
+        \u2022 Sportlich fit werden\n
+        \u2022 Eine echte Leseratte werden\n
+        \u2022 Klavier spielen lernen\n
+        \u2022 Meine Zahnpflege verbessern\n
+        \u2022 Klavier spielen lernen\n
+        \u2022 Meinen Uni-Abschluss schaffen\n
+    </string>
+
+
+
 
 </resources>

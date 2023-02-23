@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textViewDesign1"
+        android:id="@+id/infoTextPrompt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="45dp"
@@ -36,6 +36,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/headerDesign" />
 
+    <Button
+        android:id="@+id/beispielButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="beispiele"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/infoTextPrompt" />
+
     <LinearLayout
         android:id="@+id/linearLayoutBehaviorSize"
         android:layout_width="match_parent"
@@ -43,7 +54,7 @@
         android:layout_marginHorizontal="13dp"
         android:layout_marginBottom="45dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/weiterZuDesign3Button">
+        app:layout_constraintBottom_toTopOf="@+id/weiterZuDesign2bButton">
 
         <EditText
             android:id="@+id/editBehaviorSize"
