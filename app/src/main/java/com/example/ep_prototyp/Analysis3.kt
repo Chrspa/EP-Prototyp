@@ -21,7 +21,6 @@ import com.example.ep_prototyp.RecyclerAdapter
 
 class Analysis3 : Fragment(), RecyclerAdapter.SeekBarListener {
 
-    private lateinit var adapter : RecyclerAdapter
     private lateinit var mProfileDatabase : ProfileViewModel
 
     override fun onCreateView(
@@ -33,7 +32,6 @@ class Analysis3 : Fragment(), RecyclerAdapter.SeekBarListener {
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewRating)
         mProfileDatabase= ViewModelProvider(this)[ProfileViewModel::class.java]
 
-        // List of Behaviors angelegt, um sie mit Namen der Behaviors zu füllen und dem adapter zu übergeben
 
         val listOfBehaviors = mutableListOf<String>()
         // Behaviors aus Datenbank auslesen und Behavior-Names in Liste speichern
@@ -41,14 +39,14 @@ class Analysis3 : Fragment(), RecyclerAdapter.SeekBarListener {
             for (b in behaviour){
                 listOfBehaviors.add(b.beschreibung)
             }
+            var adapter : RecyclerAdapter = RecyclerAdapter(listOfBehaviors)
+            adapter.setSeekBarListener(this)
+            recyclerView.adapter = adapter
         })
 
-        // Liste mit Verhalten übergeben, um sie im RecyclerView anzuzeigen
-        adapter = RecyclerAdapter(listOfBehaviors)
-        adapter.setSeekBarListener(this)
 
         // Adapter auf RecycleView setzen
-        recyclerView.adapter = adapter
+
 
         // Layout Manager auf RecyclerView setzen
         val layoutManager = LinearLayoutManager(context)
