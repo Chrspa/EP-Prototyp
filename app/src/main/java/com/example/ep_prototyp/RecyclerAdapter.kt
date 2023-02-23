@@ -31,7 +31,7 @@ class RecyclerAdapter (val list: List<String>) : RecyclerView.Adapter<RecyclerAd
         return list.size
     }
 
-    interface SeekBarListener { // Interface, um SeeBar-Progress Define the interface to pass the SeekBar progress data back to your Fragment
+    interface SeekBarListener { // Interface, um SeeBar-Progress zum Fragment durchzugeben
         fun onSeekBarChanged(position: Int, progress: Int)
     }
 

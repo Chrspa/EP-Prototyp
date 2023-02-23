@@ -64,6 +64,7 @@ class Analysis3 : Fragment(), RecyclerAdapter.SeekBarListener {
                 var id = 1
                 for (b in behaviour){
                     mProfileDatabase.updateBehaviour(Behaviour(id, b.beschreibung, efficiencies[id-1].efficiencyValue, b.einfachheit))
+                    id++
                     count++
                 }
             })
