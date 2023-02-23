@@ -28,9 +28,9 @@ class PracticeMain : Fragment() {
         val notificationButton = view.findViewById<Button>(R.id.notificationButton)
 
         notificationButton.setOnClickListener(){
+            findNavController().navigate(R.id.action_practice1_to_fragment_notification)
 
         }
-
 
 
         return view

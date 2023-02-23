@@ -79,6 +79,9 @@
         <action
             android:id="@+id/action_practice1_to_practice2"
             app:destination="@id/practice2" />
+        <action
+            android:id="@+id/action_practice1_to_fragment_notification"
+            app:destination="@id/fragment_notification" />
     </fragment>
     <fragment
         android:id="@+id/review"
@@ -147,6 +150,14 @@
             app:destination="@id/design" />
         <action
             android:id="@+id/action_review2b_to_practice1"
+            app:destination="@id/practice1" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_notification"
+        android:name="com.example.ep_prototyp.Notification"
+        android:label="fragment_notification">
+        <action
+            android:id="@+id/action_fragment_notification_to_practice1"
             app:destination="@id/practice1" />
     </fragment>
 </navigation>

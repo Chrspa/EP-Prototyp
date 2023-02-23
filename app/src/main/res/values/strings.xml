@@ -12,5 +12,16 @@
     <string name="explanationFeedback">Klicke den Notification-Button, um dich an dein tägliches Feedback zu erinnern. Klicke den Feedback-Button, um dein Feedback für den laufenden Tag einzutragen.</string>
     <string name="infoReview">Wenn du uns regelmäßig Feedback zu deinen Erfolgen gibst, können wir dich bei der Anpassung deines Rezeptes besser unterstützen. \n\n Nach Ablauf einer Woche beginnt automatisch die Review-Phase, in der dein Rezept bei Bedarf angepasst werden kann. \n\n Solltest du kein Feedback eintragen, ist das auch gar nicht schlimm! Du kannst auch im Review noch deine Einschätzung abgeben und dein Rezept nach deinen Vorstellungen anpassen. \n\n Wenn du die Practice-Phase vorzeitig beenden möchtest, wähle den Weg über den Feedback-Button.</string>
     <string name="explanationReview">Muss noch geschrieben werden</string>
+    <string name="explanationNotification">Wähle bitte eine Zeit aus, in der du wieder an deine Hausaufgabe wieder erinnert werden willst :) </string>
+
+
+    <string-array name="notifications">
+
+        <item>15 Minuten</item>
+        <item>30 Minuten</item>
+        <item>45 Minuten</item>
+        <item>1 Stunde</item>
+
+    </string-array>
 
 </resources>
