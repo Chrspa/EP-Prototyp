@@ -14,8 +14,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="45dp"
         android:text="DESIGN"
-        android:textStyle="bold"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,16 +26,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="45dp"
-        android:text="@string/explanationRecipe"
         android:layout_marginTop="30dp"
-        android:textSize="16sp"
         android:lineHeight="20dp"
+        android:text="@string/explanationRecipe"
         android:textAlignment="center"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/headerDesign" />
-
 
 
     <Button
@@ -46,5 +45,17 @@
         android:text="weiter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/rezeptAusgabe"
+        android:layout_width="203dp"
+        android:layout_height="186dp"
+        android:layout_marginTop="48dp"
+        android:text="Probier es nochmal :)"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDesign1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

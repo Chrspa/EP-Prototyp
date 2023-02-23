@@ -50,9 +50,9 @@
             android:layout_height="37dp"
             android:text="Sehr Effektiv"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/seekBarBehavior"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="0.696" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
