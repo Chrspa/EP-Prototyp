@@ -4,7 +4,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="explanationGoal">Jetzt kann es losgehen! \n\n Als erstes setzt du ein Ziel fest. Ein Ziel ist ein Zustand, der in der Zukunft liegt und den du erreichen möchtest. \n\n Wir unterscheiden "Ziele" von "Verhalten", die im nächsten Schritt festgelegt werden. \n\n Beispiele für gute Ziele findest du hier.</string>
     <string name="explanationBehavior">In diesem Schritt sammelst du möglichst viele Verhalten, die dir helfen, dein Ziel zu erreichen. \n\n Deiner Fantasie sind keine Grenzen gesetzt, trag alles ein, was dir einfällt! Wir werden im weiteren Verlauf genau analysieren, welche sich für dich eignen. \n\n Beispiele für passende Verhalten findest du hier.</string>
-    <string name="explanationDesign">Super, du hast die Analyse-Phase erfolgreich durchlaufen und ein Golden Habit für dein Verhaltensrezept ausgewählt! \n\n Als nächstes legst du eine Zeitangabe oder eine Anzahl an Wiederholungen für dein Verhalten fest. \n\n Stell dir einen besonders stressigen und motivationslosen Tag vor - der Umfang sollte klein genug sein, dass du es trotzdem schaffst, das Verhalten auszuführen! \n\n Bitte gib in Minuten an.</string>
+    <string name="explanationDesign">Super, du hast die Analyse-Phase erfolgreich durchlaufen und ein Golden Habit für dein Verhaltensrezept ausgewählt! \n\n Als nächstes legst du eine Zeitangabe oder eine Anzahl an Wiederholungen für dein Verhalten fest. \n\n Stell dir einen besonders stressigen und motivationslosen Tag vor - der Umfang sollte klein genug sein, dass du es trotzdem schaffst, das Verhalten auszuführen!</string>
     <string name="explanationPrompt">Es gilt nun, dein Verhalten an einen Prompt zu binden. Ein guter Prompt ist etwas, das bereits in deinem Alltag vorhanden ist. Du wirst dein Verhalten immer dann ausführen, wenn der Prompt auftritt. \n\n Durch die stetige Wiederholung entsteht eine Verknüpfung in deinem Gehirn und das Verhalten wird mit der Zeit zur Gewohnheit. \n\n Beispiele für gute Prompts findest du hier.</string>
     <string name="explanationCelebration">Für dein finales Verhaltensrezept fehlt noch eine Sache: Die Celebration! \n\n Wir bei MIND STEPS feiern auch allerkleinste Erfolge - und das solltest du auch tun! \n\n Positive Gefühle sind der Motor für Veränderungen. Je mehr Spaß dir deine Celebration macht, desto besser!</string>
     <string name="explanationRecipe">Jetzt sind alle Schritte gemeistert und dein erstes Verhaltensrezept steht fest! \n\n Und so sieht es aus:</string>
@@ -13,6 +13,17 @@
     <string name="infoReview">Wenn du uns regelmäßig Feedback zu deinen Erfolgen gibst, können wir dich bei der Anpassung deines Rezeptes besser unterstützen. \n\n Nach Ablauf einer Woche beginnt automatisch die Review-Phase, in der dein Rezept bei Bedarf angepasst werden kann. \n\n Solltest du kein Feedback eintragen, ist das auch gar nicht schlimm! Du kannst auch im Review noch deine Einschätzung abgeben und dein Rezept nach deinen Vorstellungen anpassen. \n\n Wenn du die Practice-Phase vorzeitig beenden möchtest, wähle den Weg über den Feedback-Button.</string>
     <string name="explanationReview">Muss noch geschrieben werden</string>
     <string name="explanationNotification">Wähle bitte eine Zeit aus, in der du wieder an deine Hausaufgabe wieder erinnert werden willst :) </string>
+
+    <string name="reviewAllesGut">Dein Rezept funktioniert, das ist super! \n\n Du kannst stolz auf dich sein und deinen Erfolg an dieser Stelle gerne mit einer kleinen Extra-Celebration feiern. \n\n Mach so weiter und du hast schon bald ein festes Habit gebildet! </string>
+    <string name="reviewVergesseHinundWieder">Wenn du dein neues Habit hin und wieder vergisst, ist das erstmal gar nicht schlimm. Konzentrier dich auf deine Erfolge und feiere sie! \n\n Über den Button gelangst du zurück in die Practice-Phase. Versuche es noch eine Woche!</string>
+    <string name="reviewVergesseStaendig">Wenn du dein neues Habit ständig vergisst, stimmt etwas mit deinem Rezept nicht. \n\n Lass uns versuchen, einen neuen Prompt zu setzen. Vielleicht findest du etwas, das besser zu deinem Verhalten passt. </string>
+    <string name="reviewZuSchwer">Sieht so aus, als hättest du dir zu viel vorgenommen. Kehre zurück in die Design-Phase und schraube deine Zeiteinheit oder die Anzahl an Wiederholungen zurück. \n\n </string>
+    <string name="reviewAnderesMachen">Das Verhalten ist nicht das richtige für dich? Kein Problem! \n\n Kehre zurück in die Analyse-Phase und wähle ein neues Verhalten aus deinen Golden Behaviors aus.</string>
+
+    <string name="buttonTextAllesGutUndVergesseHuW">Zurück zur Practice-Phase</string>
+    <string name="buttonTextVergesseImmer">Zurück zur Design-Phase</string>
+    <string name="buttonTextZuSchwer">Zurück zur Design-Phase</string>
+    <string name="buttonTextAnderes">Zurück zur Analyse-Phase</string>
 
 
     <string-array name="notifications">
