@@ -25,6 +25,12 @@ class PracticeMain : Fragment() {
 
         }
 
+        val notificationButton = view.findViewById<Button>(R.id.notificationButton)
+
+        notificationButton.setOnClickListener(){
+
+        }
+
 
 
         return view
