@@ -104,8 +104,8 @@
         android:label="fragment_design2"
         tools:layout="@layout/fragment_design2" >
         <action
-            android:id="@+id/action_design2_to_design3"
-            app:destination="@id/design3" />
+            android:id="@+id/action_design2_to_design2b"
+            app:destination="@id/design2b" />
     </fragment>
     <fragment
         android:id="@+id/design3"
@@ -139,5 +139,14 @@
         <action
             android:id="@+id/action_review2_to_practice1"
             app:destination="@id/practice1" />
+    </fragment>
+    <fragment
+        android:id="@+id/design2b"
+        android:name="com.example.ep_prototyp.Design2b"
+        android:label="fragment_design2b"
+        tools:layout="@layout/fragment_design2b" >
+        <action
+            android:id="@+id/action_design2b_to_design3"
+            app:destination="@id/design3" />
     </fragment>
 </navigation>

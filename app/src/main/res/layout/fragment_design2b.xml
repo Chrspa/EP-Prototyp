@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginBottom="102dp"
-    tools:context=".Design2">
+    tools:context=".Design2b">
 
 
     <TextView
@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="45dp"
         android:layout_marginTop="30dp"
-        android:text="@string/explanationPrompt"
+        android:text="@string/explanationCelebration"
         android:textAlignment="center"
         android:textSize="16sp"
         android:lineHeight="20dp"
@@ -53,7 +53,7 @@
             android:layout_gravity="left"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="einen Kaffee trinke" />
+            android:text="mir selbst applaudieren" />
 
         <View
             android:layout_width="0dp"
@@ -71,7 +71,7 @@
 
 
     <Button
-        android:id="@+id/weiterZuDesign2bButton"
+        android:id="@+id/weiterZuDesign3Button"
         android:layout_width="153dp"
         android:layout_height="68dp"
         android:layout_margin="13dp"
@@ -84,7 +84,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="13dp"
-        android:text="Immer wenn ich..."
+        android:text="Im Anschluss an das Verhalten werde ich"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/linearLayoutBehaviorSize" />
 
