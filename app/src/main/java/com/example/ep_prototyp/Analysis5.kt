@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.SeekBar
 import android.widget.TextView
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ep_prototyp.R
@@ -26,10 +27,10 @@ class Analysis5 : Fragment() {
         val view = inflater.inflate(R.layout.fragment_analysis5, container, false)
 
 
-        class BehaviorItems (val idForUse:Int,
-                             val beschreibungForUse:String,
-                             val efficiencyForUse :Int?=null,
-                             val einfachheitForUse:Int?=null)
+        mProfileDatabase= ViewModelProvider(this).get(ProfileViewModel::class.java)
+
+
+
 
         val listOfBehaviour = mutableListOf<BehaviorItems>()
 
@@ -60,4 +61,9 @@ class Analysis5 : Fragment() {
 
         return view
     }
+
+    class BehaviorItems (val idForUse:Int,
+                         val beschreibungForUse:String,
+                         val efficiencyForUse :Int?=null,
+                         val einfachheitForUse:Int?=null)
 }

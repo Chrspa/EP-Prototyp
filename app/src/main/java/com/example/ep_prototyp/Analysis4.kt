@@ -50,28 +50,7 @@ class Analysis4 : Fragment(), RecyclerAdapter.SeekBarListener {
         val button=view.findViewById<Button>(R.id.weiterZuAnalysis5Button)
 
         button.setOnClickListener {
-            var count = 0 //zählt Eingaben
-            mProfileDatabase.readBehaviour.observe(viewLifecycleOwner) { behaviour ->
-                var id = 1
-                for (b in behaviour) {
-                    mProfileDatabase.updateBehaviour(
-                        Behaviour(
-                            id,
-                            b.beschreibung,
-                            b.effizienz,
-                            easeList[id - 1].easeValue
-                        )
-                    )
-                    id++
-                    count++
-                }
-            }
-            if (easeList.size == count){ //alle Eingaben müssen gemacht sein, bevor "Weiter" geklickt werden kann
-                findNavController().navigate(R.id.action_analysis4_to_analysis5)
-            }
-            else {
-                //Toast
-            }
+            findNavController().navigate(R.id.action_analysis4_to_analysis5)
         }
 
 

@@ -22,6 +22,7 @@ import com.example.ep_prototyp.RecyclerAdapter
 class Analysis3 : Fragment(), RecyclerAdapter.SeekBarListener {
 
     private val efficiencies = mutableListOf<Efficiency>()
+    private lateinit var adapter : RecyclerAdapter
     private lateinit var mProfileDatabase : ProfileViewModel
 
     override fun onCreateView(
@@ -30,26 +31,27 @@ class Analysis3 : Fragment(), RecyclerAdapter.SeekBarListener {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_analysis3, container, false)
-
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewRating)
-
         mProfileDatabase= ViewModelProvider(this).get(ProfileViewModel::class.java)
 
         // List of Behaviors angelegt, um sie mit Namen der Behaviors zu füllen und dem adapter zu übergeben
-        val listOfBehaviors = mutableListOf<String>()
 
+        val listOfBehaviors = mutableListOf<String>()
         // Behaviors aus Datenbank auslesen und Behavior-Names in Liste speichern
         mProfileDatabase.readBehaviour.observe(viewLifecycleOwner, Observer { behaviour ->
             for (b in behaviour){
-                listOfBehaviors.add(behaviour[0].beschreibung)
+                listOfBehaviors.add(b.beschreibung)
             }
+            adapter = RecyclerAdapter(listOfBehaviors)
+            adapter.setSeekBarListener(this)
+            recyclerView.adapter = adapter
         })
 
+
         // Liste mit Verhalten übergeben, um sie im RecyclerView anzuzeigen
-        val adapter = RecyclerAdapter(listOfBehaviors)
+
 
         // Adapter auf RecycleView setzen
-        recyclerView.adapter = adapter
 
         // Layout Manager auf RecyclerView setzen
         val layoutManager = LinearLayoutManager(context)
@@ -59,33 +61,24 @@ class Analysis3 : Fragment(), RecyclerAdapter.SeekBarListener {
         val button=view.findViewById<Button>(R.id.weiterZuAnalysis4Button)
 
         button.setOnClickListener {
-            var count = 0
-            mProfileDatabase.readBehaviour.observe(viewLifecycleOwner) { behaviour ->
-                var id = 1
-                for (b in behaviour) {
-                    mProfileDatabase.updateBehaviour(
-                        Behaviour(
-                            id,
-                            b.beschreibung,
-                            efficiencies[id - 1].efficiencyValue,
-                            b.einfachheit
-                        )
-                    )
-                    id++
-                    count++
-                }
-            }
-            //alle Eingaben müssen gemacht und gespeichert sein, bevor "Weiter" geklickt werden kann
-            if (efficiencies.size == count){
-                findNavController().navigate(R.id.action_analysis3_to_analysis4)
-            }
-            else {
-                //Toast: Bitte erst alle Angaben machen
-            }
+            for(i in adapter.list){
 
+                Toast.makeText(requireContext(),"die Efficiency ist von ${i.toString()} = ${i.toString()}" ,Toast.LENGTH_SHORT).show()
+            }
+         //  addBehaviourEfficiency()
+            //alle Eingaben müssen gemacht und gespeichert sein, bevor "Weiter" geklickt werden kann
+            //    findNavController().navigate(R.id.action_analysis3_to_analysis4)
+                //Toast: Bitte erst alle Angaben machen
+            findNavController().navigate(R.id.action_analysis3_to_analysis4)
         }
 
         return view
+    }
+
+    private fun addBehaviourEfficiency(listOfBehaviors:List<Behaviour>) {
+
+
+
     }
 
     data class Efficiency (val behaviorName : String, var efficiencyValue: Int) //verbindet Position der ViewCard (über die das Verhalten abegrufen werden kann) mit dem Wert der Seekbar

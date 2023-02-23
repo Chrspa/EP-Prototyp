@@ -57,17 +57,21 @@ class LoginScreen : Fragment() {
     }
 
     private fun loadData(username:EditText){
+
         mProfileDatabase.readData.observe(viewLifecycleOwner, Observer { profil ->
-            username.setText(profil[0].name)
+            if(profil.isEmpty()){
+                mProfileDatabase.createProfile(Profile(0,"Name"))
+                username.setText(profil[0].name)
+            }else{
+                username.setText(profil[0].name)
+            }
         })
     }
     private fun UpdateProfile(editName:String,feedback:TextView){
             mProfileDatabase.readData.observe(viewLifecycleOwner, Observer { profil ->
-                if(profil.isEmpty()){
-                    mProfileDatabase.createProfile(Profile(0,editName))
-                }else {
+
                     mProfileDatabase.updateProfile(Profile(1, editName, profil[0].notificationZeit, profil[0].goal))
-                }
+
             })
             Toast.makeText(requireContext(),"Neuer Name aktualisiert!",Toast.LENGTH_SHORT).show()
             feedback.text="Hallo $editName! Schön das du da bist!"
