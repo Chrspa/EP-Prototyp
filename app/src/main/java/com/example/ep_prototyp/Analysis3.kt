@@ -60,14 +60,21 @@ class Analysis3 : Fragment(), RecyclerAdapter.SeekBarListener {
 
         button.setOnClickListener {
             var count = 0
-            mProfileDatabase.readBehaviour.observe(viewLifecycleOwner, Observer { behaviour ->
+            mProfileDatabase.readBehaviour.observe(viewLifecycleOwner) { behaviour ->
                 var id = 1
-                for (b in behaviour){
-                    mProfileDatabase.updateBehaviour(Behaviour(id, b.beschreibung, efficiencies[id-1].efficiencyValue, b.einfachheit))
+                for (b in behaviour) {
+                    mProfileDatabase.updateBehaviour(
+                        Behaviour(
+                            id,
+                            b.beschreibung,
+                            efficiencies[id - 1].efficiencyValue,
+                            b.einfachheit
+                        )
+                    )
                     id++
                     count++
                 }
-            })
+            }
             //alle Eingaben müssen gemacht und gespeichert sein, bevor "Weiter" geklickt werden kann
             if (efficiencies.size == count){
                 findNavController().navigate(R.id.action_analysis3_to_analysis4)

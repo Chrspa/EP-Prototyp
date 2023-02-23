@@ -7,11 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.SeekBar
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.RecyclerView
 import com.example.ep_prototyp.R
+import com.google.android.material.search.SearchView.Behavior
 
 class Analysis5 : Fragment() {
 
+    private lateinit var mProfileDatabase : ProfileViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,8 +31,27 @@ class Analysis5 : Fragment() {
 
         }
 
+        class Behavior (val id:Int,
+                             val beschreibung:String,
+                             val effizienz:Int?=null,
+                             val einfachheit:Int?=null)
 
-        var value = 0
+        val listOfBehaviour = mutableListOf<Behavior>()
+
+        mProfileDatabase.readBehaviour.observe(viewLifecycleOwner, Observer { behaviour ->
+            var i = 0
+            for (b in behaviour){
+                val newBehavior = Behavior(behaviour[i].id, behaviour[i].beschreibung, behaviour[i].effizienz, behaviour[i].einfachheit)
+                listOfBehaviour.add(newBehavior)
+            }
+        })
+
+        //Hier evtl Asynchronität ein Problem?
+        listOfBehaviour.sortByDescending { it.einfachheit }
+        listOfBehaviour.sortByDescending { it.beschreibung }
+
+        val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewGoldenBehaviors)
+
 
 
 
