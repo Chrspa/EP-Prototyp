@@ -21,7 +21,6 @@ import com.example.ep_prototyp.RecyclerAdapter
 
 class Analysis3 : Fragment(), RecyclerAdapter.SeekBarListener {
 
-    private val efficiencies = mutableListOf<Efficiency>()
     private lateinit var adapter : RecyclerAdapter
     private lateinit var mProfileDatabase : ProfileViewModel
 
@@ -32,7 +31,7 @@ class Analysis3 : Fragment(), RecyclerAdapter.SeekBarListener {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_analysis3, container, false)
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewRating)
-        mProfileDatabase= ViewModelProvider(this).get(ProfileViewModel::class.java)
+        mProfileDatabase= ViewModelProvider(this)[ProfileViewModel::class.java]
 
         // List of Behaviors angelegt, um sie mit Namen der Behaviors zu füllen und dem adapter zu übergeben
 
@@ -42,50 +41,42 @@ class Analysis3 : Fragment(), RecyclerAdapter.SeekBarListener {
             for (b in behaviour){
                 listOfBehaviors.add(b.beschreibung)
             }
-            adapter = RecyclerAdapter(listOfBehaviors)
-            adapter.setSeekBarListener(this)
-            recyclerView.adapter = adapter
         })
 
-
         // Liste mit Verhalten übergeben, um sie im RecyclerView anzuzeigen
-
+        adapter = RecyclerAdapter(listOfBehaviors)
+        adapter.setSeekBarListener(this)
 
         // Adapter auf RecycleView setzen
+        recyclerView.adapter = adapter
 
         // Layout Manager auf RecyclerView setzen
         val layoutManager = LinearLayoutManager(context)
         recyclerView.layoutManager = layoutManager
 
-
         val button=view.findViewById<Button>(R.id.weiterZuAnalysis4Button)
 
         button.setOnClickListener {
-            for(i in adapter.list){
-
-                Toast.makeText(requireContext(),"die Efficiency ist von ${i.toString()} = ${i.toString()}" ,Toast.LENGTH_SHORT).show()
+            if (efficiencies.size == listOfBehaviors.size){
+                //@Chris Bitte hier alle progress-Ints aus der efficiencies-Liste den Behaviors in der Datenbank zuordnen
+                mProfileDatabase.updateBehaviour()
             }
-         //  addBehaviourEfficiency()
-            //alle Eingaben müssen gemacht und gespeichert sein, bevor "Weiter" geklickt werden kann
-            //    findNavController().navigate(R.id.action_analysis3_to_analysis4)
-                //Toast: Bitte erst alle Angaben machen
             findNavController().navigate(R.id.action_analysis3_to_analysis4)
         }
 
         return view
     }
 
-    private fun addBehaviourEfficiency(listOfBehaviors:List<Behaviour>) {
+    data class Efficiency (val position : Int, var progress : Int) //verbindet Position der ViewCard (über die das Verhalten abegrufen werden kann) mit dem Wert der Seekbar
+    val efficiencies = mutableListOf<Efficiency>()
 
-
-
+    override fun onSeekBarChanged(position: Int, progress: Int) {
+        val existingEfficiency = efficiencies.find { it.position == position }
+        if (existingEfficiency != null) {
+            existingEfficiency.progress = progress
+        } else {
+            val newEfficiency = Efficiency(position, progress)
+            efficiencies.add(newEfficiency)
+        }
     }
-
-    data class Efficiency (val behaviorName : String, var efficiencyValue: Int) //verbindet Position der ViewCard (über die das Verhalten abegrufen werden kann) mit dem Wert der Seekbar
-
-    override fun onSeekBarChanged(position: Int, progress: Int) { //speichert Efficiency
-        val newEfficiency = Efficiency(position.toString(), progress)
-        efficiencies.add(newEfficiency)
-    }
-
 }
