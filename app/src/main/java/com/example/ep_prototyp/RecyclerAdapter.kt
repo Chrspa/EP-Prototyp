@@ -10,6 +10,10 @@ import androidx.recyclerview.widget.RecyclerView
 
 class RecyclerAdapter (val list: List<String>) : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
+    interface SeekBarListener {
+        fun onSeekBarChanged(progress: Int)
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerAdapter.ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.card_layout_behaviors, parent, false)
         return ViewHolder(v)
