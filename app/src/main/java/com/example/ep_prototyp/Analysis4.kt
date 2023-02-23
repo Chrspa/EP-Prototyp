@@ -47,7 +47,7 @@ class Analysis4 : Fragment(), RecyclerAdapter.SeekBarListener {
         val layoutManager = LinearLayoutManager(context)
         recyclerView.layoutManager = layoutManager
 
-        val button=view.findViewById<Button>(R.id.weiterZuAnalysis4Button)
+        val button=view.findViewById<Button>(R.id.weiterZuAnalysis5Button)
 
         button.setOnClickListener {
             if (easeList.size == listOfBehaviors2.size){
