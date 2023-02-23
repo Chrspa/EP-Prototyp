@@ -66,13 +66,13 @@ class Analysis3 : Fragment(), RecyclerAdapter.SeekBarListener {
         return view
     }
 
-    data class Efficiency (val position : Int, var progress : Int) //verbindet Position der ViewCard (über die das Verhalten abegrufen werden kann) mit dem Wert der Seekbar
+    data class Efficiency (val position : Int, var efficiencyValue : Int) //verbindet Position der ViewCard (über die das Verhalten abegrufen werden kann) mit dem Wert der Seekbar
     val efficiencies = mutableListOf<Efficiency>()
 
     override fun onSeekBarChanged(position: Int, progress: Int) {
         val existingEfficiency = efficiencies.find { it.position == position }
         if (existingEfficiency != null) {
-            existingEfficiency.progress = progress
+            existingEfficiency.efficiencyValue = progress
         } else {
             val newEfficiency = Efficiency(position, progress)
             efficiencies.add(newEfficiency)

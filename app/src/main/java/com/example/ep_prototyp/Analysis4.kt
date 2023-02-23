@@ -15,18 +15,30 @@ import com.example.ep_prototyp.R
 
 class Analysis4 : Fragment(), RecyclerAdapter.SeekBarListener {
 
-    private val easeList = mutableListOf<Ease>()
+    private lateinit var adapter : RecyclerAdapter
     private lateinit var mProfileDatabase : ProfileViewModel
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_analysis4, container, false)
-
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewRating2)
+        mProfileDatabase= ViewModelProvider(this)[ProfileViewModel::class.java]
 
-        //Hier muss dem Adapter die Liste mit Verhalten übergeben werden
-        val adapter = RecyclerAdapter(listOf("Verhalten 1", "Verhalten 2", "Verhalten 3"))
+
+        // Adapter auf RecycleView setzen
+        recyclerView.adapter = adapter
+
+        val listOfBehaviors2 = mutableListOf<String>()
+        // Behaviors aus Datenbank auslesen und Behavior-Names in Liste speichern
+        mProfileDatabase.readBehaviour.observe(viewLifecycleOwner, Observer { behaviour ->
+            for (b in behaviour){
+                listOfBehaviors2.add(b.beschreibung)
+            }
+        })
+
+        adapter = RecyclerAdapter(listOfBehaviors2)
+        adapter.setSeekBarListener(this)
 
         // Adapter auf RecycleView setzen
         recyclerView.adapter = adapter
@@ -35,32 +47,29 @@ class Analysis4 : Fragment(), RecyclerAdapter.SeekBarListener {
         val layoutManager = LinearLayoutManager(context)
         recyclerView.layoutManager = layoutManager
 
-        mProfileDatabase= ViewModelProvider(this).get(ProfileViewModel::class.java)
-
-        // List of Behaviors angelegt, um sie mit Namen der Behaviors zu füllen und dem adapter zu übergeben
-        val listOfBehaviors = mutableListOf<String>()
-
-        // Behaviors aus Datenbank auslesen und Behavior-Names in Liste speichern
-        mProfileDatabase.readBehaviour.observe(viewLifecycleOwner) { behaviour ->
-            for (b in behaviour) {
-                listOfBehaviors.add(behaviour[0].beschreibung)
-            }
-        }
-
-        val button=view.findViewById<Button>(R.id.weiterZuAnalysis5Button)
+        val button=view.findViewById<Button>(R.id.weiterZuAnalysis4Button)
 
         button.setOnClickListener {
+            if (easeList.size == listOfBehaviors2.size){
+                //@Chris Bitte hier alle progress-Ints aus der ease-Liste den Behaviors in der Datenbank zuordnen
+            }
             findNavController().navigate(R.id.action_analysis4_to_analysis5)
         }
-
 
         return view
     }
 
-    data class Ease (val behaviorName : String, var easeValue: Int) //verbindet Position der ViewCard (über die das Verhalten abegrufen werden kann) mit dem Wert der Seekbar
+    data class Ease (val position : Int, var easeValue: Int) //verbindet Position der ViewCard (über die das Verhalten abegrufen werden kann) mit dem Wert der Seekbar
+    val easeList = mutableListOf<Ease>()
+
 
     override fun onSeekBarChanged(position: Int, progress: Int) { //speichert Ease
-        val newEase = Ease(position.toString(), progress)
-        easeList.add(newEase)
+        val existingEase = easeList.find { it.position == position }
+        if (existingEase != null) {
+            existingEase.easeValue = progress
+        } else {
+            val newEase = Ease (position, progress)
+            easeList.add(newEase)
+        }
     }
 }
