@@ -7,6 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.core.graphics.component1
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -14,7 +18,10 @@ import com.example.ep_prototyp.R
 import com.example.ep_prototyp.RecyclerAdapter
 
 
-class Analysis3 : Fragment() {
+class Analysis3 : Fragment(), RecyclerAdapter.SeekBarListener {
+
+    private val efficiencies = mutableListOf<Efficiency>()
+    private lateinit var mProfileDatabase : ProfileViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,8 +32,20 @@ class Analysis3 : Fragment() {
 
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewRating)
 
-        //Hier muss dem Adapter die Liste mit Verhalten übergeben werden
-        val adapter = RecyclerAdapter(listOf("Verhalten 1", "Verhalten 2", "Verhalten 3"))
+        mProfileDatabase= ViewModelProvider(this).get(ProfileViewModel::class.java)
+
+        // List of Behaviors angelegt, um sie mit Namen der Behaviors zu füllen und dem adapter zu übergeben
+        val listOfBehaviors = mutableListOf<String>()
+
+        // Behaviors aus Datenbank auslesen und Behavior-Names in Liste speichern
+        mProfileDatabase.readBehaviour.observe(viewLifecycleOwner, Observer { behaviour ->
+            for (b in behaviour){
+                listOfBehaviors.add(behaviour[0].beschreibung)
+            }
+        })
+
+        // Liste mit Verhalten übergeben, um sie im RecyclerView anzuzeigen
+        val adapter = RecyclerAdapter(listOfBehaviors)
 
         // Adapter auf RecycleView setzen
         recyclerView.adapter = adapter
@@ -35,15 +54,28 @@ class Analysis3 : Fragment() {
         val layoutManager = LinearLayoutManager(context)
         recyclerView.layoutManager = layoutManager
 
+
         val button=view.findViewById<Button>(R.id.weiterZuAnalysis4Button)
 
         button.setOnClickListener {
+            mProfileDatabase.readBehaviour.observe(viewLifecycleOwner, Observer { behaviour ->
+                var id = 1
+                for (b in behaviour){
+                    mProfileDatabase.updateBehaviour(Behaviour(id, b.beschreibung, efficiencies[id-1].efficiencyValue, b.einfachheit))
+                }
+            })
             //alle Eingaben müssen gemacht sein, bevor "Weiter" geklickt werden kann
             findNavController().navigate(R.id.action_analysis3_to_analysis4)
         }
 
-
         return view
+    }
+
+    data class Efficiency (val behaviorName : String, var efficiencyValue: Int) //verbindet Position der ViewCard (über die das Verhalten abegrufen werden kann) mit dem Wert der Seekbar
+
+    override fun onSeekBarChanged(position: Int, progress: Int) { //speichert Efficiency
+        val newEfficiency = Efficiency(position.toString(), progress)
+        efficiencies.add(newEfficiency)
     }
 
 }

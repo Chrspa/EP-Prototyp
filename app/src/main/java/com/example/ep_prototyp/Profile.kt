@@ -20,9 +20,8 @@ data class Behaviour(
     @PrimaryKey(autoGenerate = true)
     val id:Int,
     val beschreibung:String,
-    val einfachheit:Int?=null,
-    val effizienz:Int?=null
-
+    val effizienz:Int?=null,
+    val einfachheit:Int?=null
 )
 
 
