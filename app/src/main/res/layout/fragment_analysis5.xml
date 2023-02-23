@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/easeTextView"
+        android:id="@+id/textViewGB"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="45dp"
@@ -34,19 +34,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/header_verhalten" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewGoldenBehaviors"
+    <TextView
+        android:id="@+id/goldenBehaviorDisplay"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="13dp"
-        android:layout_marginTop="30dp"
-        app:layout_constraintTop_toBottomOf="@+id/easeTextView" />
+        android:layout_marginHorizontal="45dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/textViewGB"
+        android:text="Hier Golden Behaviors"
+        />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="45dp"
-        android:layout_marginVertical="20dp"
+        android:layout_marginBottom="45dp"
         android:text="Wähle ein Verhalten aus, das du besonders gerne umsetzen möchtest!"
         android:textSize="16sp"
         android:lineHeight="20dp"
@@ -54,7 +56,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/recyclerViewGoldenBehaviors" />
+        app:layout_constraintBottom_toTopOf="@id/weiterZuDesignAnalysisButton" />
 
 
     <Button

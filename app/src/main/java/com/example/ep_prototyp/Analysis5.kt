@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.SeekBar
+import android.widget.TextView
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
@@ -24,33 +25,36 @@ class Analysis5 : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_analysis5, container, false)
 
+
+        class BehaviorItems (val idForUse:Int,
+                             val beschreibungForUse:String,
+                             val efficiencyForUse :Int?=null,
+                             val einfachheitForUse:Int?=null)
+
+        val listOfBehaviour = mutableListOf<BehaviorItems>()
+
+        // Ab hier evtl Asynchronität ein Problem?
+        mProfileDatabase.readBehaviour.observe(viewLifecycleOwner, Observer { behaviour ->
+            for (b in behaviour){
+                val newBehavior = BehaviorItems(b.id, b.beschreibung, b.effizienz, b.einfachheit)
+                listOfBehaviour.add(newBehavior)
+            }
+        })
+
+        listOfBehaviour.sortByDescending { it.efficiencyForUse }
+        listOfBehaviour.sortByDescending { it.einfachheitForUse}
+
+        val goldenBehaviorsView = view.findViewById<TextView>(R.id.goldenBehaviorDisplay)
+
+        goldenBehaviorsView.text = "" //Will hier Namen der ersten Behaviors aus der Liste anzeigen
+
+
         val button=view.findViewById<Button>(R.id.weiterZuDesignAnalysisButton)
 
         button.setOnClickListener {
             findNavController().navigate(R.id.action_analysis5_to_design)
 
         }
-
-        class Behavior (val id:Int,
-                             val beschreibung:String,
-                             val effizienz:Int?=null,
-                             val einfachheit:Int?=null)
-
-        val listOfBehaviour = mutableListOf<Behavior>()
-
-        mProfileDatabase.readBehaviour.observe(viewLifecycleOwner, Observer { behaviour ->
-            for (b in behaviour){
-                val newBehavior = Behavior(b.id, b.beschreibung, b.effizienz, b.einfachheit)
-                listOfBehaviour.add(newBehavior)
-            }
-        })
-
-        //Hier evtl Asynchronität ein Problem?
-        listOfBehaviour.sortByDescending { it.einfachheit }
-        listOfBehaviour.sortByDescending { it.beschreibung }
-
-        val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewGoldenBehaviors)
-
 
 
 
