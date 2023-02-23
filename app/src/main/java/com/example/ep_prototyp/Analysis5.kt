@@ -39,9 +39,8 @@ class Analysis5 : Fragment() {
         val listOfBehaviour = mutableListOf<Behavior>()
 
         mProfileDatabase.readBehaviour.observe(viewLifecycleOwner, Observer { behaviour ->
-            var i = 0
             for (b in behaviour){
-                val newBehavior = Behavior(behaviour[i].id, behaviour[i].beschreibung, behaviour[i].effizienz, behaviour[i].einfachheit)
+                val newBehavior = Behavior(b.id, b.beschreibung, b.effizienz, b.einfachheit)
                 listOfBehaviour.add(newBehavior)
             }
         })
