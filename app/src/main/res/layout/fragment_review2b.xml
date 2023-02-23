@@ -48,34 +48,39 @@
 
 
         <Button
+            android:id="@+id/laeuftSuperButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="13dp"
+            android:text="Es läuft alles super!" />
+
+        <Button
+            android:id="@+id/vergesseHinUndWiederButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="13dp"
             android:text="Ich vergesse es hin und wieder" />
 
         <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="13dp"
-            android:text="ich möchte etwas anders machen" />
-
-        <Button
+            android:id="@+id/vergesseStaendigButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="13dp"
             android:text="Ich vergesse es ständig" />
 
         <Button
+            android:id="@+id/verhaltenZuSchwierigButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="13dp"
             android:text="Das verhalten ist zu schwierig" />
 
         <Button
+            android:id="@+id/anderesMachenButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="13dp"
-            android:text="Es läuft alles super!" />
+            android:text="ich möchte etwas anders machen" />
 
     </LinearLayout>
 
