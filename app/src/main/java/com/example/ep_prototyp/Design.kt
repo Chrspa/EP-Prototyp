@@ -34,8 +34,7 @@ class Design : Fragment() {
             längeBehaviourSpeichern(eingabe)
             Toast.makeText(requireContext(),"Länge gespeichert!",Toast.LENGTH_LONG).show()
             val ausgabe=view.findViewById<TextView>(R.id.infoTextDesign1)
-            Thread.sleep(2000)
-            load(ausgabe)
+
 
             findNavController().navigate(R.id.action_design_to_design2)
         }
