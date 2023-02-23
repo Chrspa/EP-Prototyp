@@ -59,7 +59,6 @@ class Analysis3 : Fragment(), RecyclerAdapter.SeekBarListener {
         button.setOnClickListener {
             if (efficiencies.size == listOfBehaviors.size){
                 //@Chris Bitte hier alle progress-Ints aus der efficiencies-Liste den Behaviors in der Datenbank zuordnen
-                mProfileDatabase.updateBehaviour()
             }
             findNavController().navigate(R.id.action_analysis3_to_analysis4)
         }
