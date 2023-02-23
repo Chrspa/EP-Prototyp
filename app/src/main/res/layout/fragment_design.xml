@@ -27,45 +27,14 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="45dp"
         android:layout_marginTop="30dp"
-        android:text="@string/explanationDesign"
-        android:textSize="16sp"
         android:lineHeight="20dp"
+        android:text="@string/explanationDesign"
         android:textAlignment="center"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/headerDesign" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="13dp"
-        android:layout_marginBottom="45dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/weiterZuDesign2Button">
-
-        <EditText
-            android:id="@+id/editBehaviorSize"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="10 min" />
-
-        <View
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
-
-        <Button
-            android:layout_width="153dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="end"
-            android:text="bestätigen" />
-
-
-    </LinearLayout>
 
 
     <Button
@@ -73,8 +42,25 @@
         android:layout_width="153dp"
         android:layout_height="68dp"
         android:layout_margin="13dp"
+        android:layout_marginBottom="56dp"
         android:text="weiter"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editBehaviorSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/infoTextDesign1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
