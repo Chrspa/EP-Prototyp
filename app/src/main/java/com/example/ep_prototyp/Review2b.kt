@@ -50,6 +50,7 @@ class Review2b : Fragment() {
             popupAdviceText.text = getString(R.string.reviewVergesseHinundWieder)
             popupNavButton.text = getString(R.string.buttonTextAllesGutUndVergesseHuW)
             popupNavButton.setOnClickListener(){
+                popupWindow.dismiss()
                 findNavController().navigate(R.id.action_review2b_to_practice1)
             }
         }
@@ -59,6 +60,7 @@ class Review2b : Fragment() {
             popupAdviceText.text = getString(R.string.reviewVergesseStaendig)
             popupNavButton.text = getString(R.string.buttonTextVergesseImmer)
             popupNavButton.setOnClickListener(){
+                popupWindow.dismiss()
                 findNavController().navigate(R.id.action_review2b_to_design)
             }
         }
@@ -68,6 +70,7 @@ class Review2b : Fragment() {
             popupAdviceText.text = getString(R.string.reviewZuSchwer)
             popupNavButton.text = getString(R.string.buttonTextZuSchwer)
             popupNavButton.setOnClickListener(){
+                popupWindow.dismiss()
                 findNavController().navigate(R.id.action_review2b_to_design)
             }
         }
@@ -77,6 +80,7 @@ class Review2b : Fragment() {
             popupAdviceText.text = getString(R.string.reviewAnderesMachen)
             popupNavButton.text = getString(R.string.buttonTextAnderes)
             popupNavButton.setOnClickListener(){
+                popupWindow.dismiss()
                 findNavController().navigate(R.id.action_review2b_to_analysis1)
             }
         }
