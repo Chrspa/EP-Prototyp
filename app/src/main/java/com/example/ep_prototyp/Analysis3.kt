@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Toast
 import androidx.core.graphics.component1
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
@@ -58,14 +59,22 @@ class Analysis3 : Fragment(), RecyclerAdapter.SeekBarListener {
         val button=view.findViewById<Button>(R.id.weiterZuAnalysis4Button)
 
         button.setOnClickListener {
+            var count = 0
             mProfileDatabase.readBehaviour.observe(viewLifecycleOwner, Observer { behaviour ->
                 var id = 1
                 for (b in behaviour){
                     mProfileDatabase.updateBehaviour(Behaviour(id, b.beschreibung, efficiencies[id-1].efficiencyValue, b.einfachheit))
+                    count++
                 }
             })
-            //alle Eingaben müssen gemacht sein, bevor "Weiter" geklickt werden kann
-            findNavController().navigate(R.id.action_analysis3_to_analysis4)
+            //alle Eingaben müssen gemacht und gespeichert sein, bevor "Weiter" geklickt werden kann
+            if (efficiencies.size == count){
+                findNavController().navigate(R.id.action_analysis3_to_analysis4)
+            }
+            else {
+                //Toast: Bitte erst alle Angaben machen
+            }
+
         }
 
         return view
