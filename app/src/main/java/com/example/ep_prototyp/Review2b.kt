@@ -80,7 +80,6 @@ class Review2b : Fragment() {
                 findNavController().navigate(R.id.action_review2b_to_analysis1)
             }
         }
-
         return view
     }
 
