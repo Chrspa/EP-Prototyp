@@ -25,29 +25,30 @@ class Analysis5 : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_analysis5, container, false)
-
+        val recyclerView2 = view.findViewById<RecyclerView>(R.id.recyclerViewGoldenBehaviors)
 
         mProfileDatabase= ViewModelProvider(this).get(ProfileViewModel::class.java)
 
-
-
-
-        val listOfBehaviour = mutableListOf<BehaviorItems>()
+        val listOfBehavior3 = mutableListOf<BehaviorItems>()
 
         // Ab hier evtl Asynchronität ein Problem?
         mProfileDatabase.readBehaviour.observe(viewLifecycleOwner, Observer { behaviour ->
             for (b in behaviour){
                 val newBehavior = BehaviorItems(b.id, b.beschreibung, b.effizienz, b.einfachheit)
-                listOfBehaviour.add(newBehavior)
+                listOfBehavior3.add(newBehavior)
             }
         })
 
-        listOfBehaviour.sortByDescending { it.efficiencyForUse }
-        listOfBehaviour.sortByDescending { it.einfachheitForUse}
+        listOfBehavior3.sortByDescending { it.efficiencyForUse }
+        listOfBehavior3.sortByDescending { it.einfachheitForUse}
 
-        val goldenBehaviorsView = view.findViewById<TextView>(R.id.goldenBehaviorDisplay)
+        val listOfGoldenBehaviors = mutableListOf<String>()
+        for (b in listOfBehavior3) {
+            listOfGoldenBehaviors.add(b.beschreibungForUse)
+        }
 
-        goldenBehaviorsView.text = "" //Will hier Namen der ersten Behaviors aus der Liste anzeigen
+        var adapter : RecyclerAdapter2 = RecyclerAdapter2(listOfGoldenBehaviors)
+        recyclerView2.adapter = adapter
 
 
         val button=view.findViewById<Button>(R.id.weiterZuDesignAnalysisButton)
@@ -56,8 +57,6 @@ class Analysis5 : Fragment() {
             findNavController().navigate(R.id.action_analysis5_to_design)
 
         }
-
-
 
         return view
     }
