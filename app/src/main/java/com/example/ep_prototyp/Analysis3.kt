@@ -53,12 +53,25 @@ class Analysis3 : Fragment(), RecyclerAdapter.SeekBarListener {
 
         button.setOnClickListener {
             if (efficiencies.size == listOfBehaviors.size){
-                //@Chris Bitte hier alle progress-Ints aus der efficiencies-Liste den Behaviors in der Datenbank zuordnen
+
+                saveEfficiencies(efficiencies)
+                Thread.sleep(1000)
+
             }
             findNavController().navigate(R.id.action_analysis3_to_analysis4)
         }
 
         return view
+    }
+
+    private fun saveEfficiencies(efficiencies:MutableList<Efficiency>) {
+        mProfileDatabase.readBehaviour.observe(viewLifecycleOwner,Observer{data->
+            var loopIterator=0
+            for (i in data){
+                mProfileDatabase.updateBehaviour(Behaviour(i.id,i.beschreibung,efficiencies[loopIterator].efficiencyValue,i.einfachheit))
+                loopIterator++
+            }
+        })
     }
 
     data class Efficiency (val position : Int, var efficiencyValue : Int) //verbindet Position der ViewCard (über die das Verhalten abegrufen werden kann) mit dem Wert der Seekbar

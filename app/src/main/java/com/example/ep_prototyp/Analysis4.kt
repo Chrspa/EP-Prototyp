@@ -12,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ep_prototyp.R
+import kotlin.concurrent.thread
 
 class Analysis4 : Fragment(), RecyclerAdapter.SeekBarListener {
 
@@ -47,7 +48,9 @@ class Analysis4 : Fragment(), RecyclerAdapter.SeekBarListener {
 
         button.setOnClickListener {
             if (easeList.size == listOfBehaviors2.size){
-                //@Chris Bitte hier alle progress-Ints aus der ease-Liste den Behaviors in der Datenbank zuordnen
+                saveEase(easeList)
+                Thread.sleep(1000)
+
             }
             findNavController().navigate(R.id.action_analysis4_to_analysis5)
         }
@@ -57,6 +60,16 @@ class Analysis4 : Fragment(), RecyclerAdapter.SeekBarListener {
 
     data class Ease (val position : Int, var easeValue: Int) //verbindet Position der ViewCard (über die das Verhalten abegrufen werden kann) mit dem Wert der Seekbar
     val easeList = mutableListOf<Ease>()
+
+    private fun saveEase(easeList:MutableList<Ease>) {
+        mProfileDatabase.readBehaviour.observe(viewLifecycleOwner,Observer{data->
+            var loopIterator=0
+            for (i in data){
+                mProfileDatabase.updateBehaviour(Behaviour(i.id,i.beschreibung,i.effizienz,easeList[loopIterator].easeValue))
+                loopIterator++
+            }
+        })
+    }
 
 
     override fun onSeekBarChanged(position: Int, progress: Int) { //speichert Ease

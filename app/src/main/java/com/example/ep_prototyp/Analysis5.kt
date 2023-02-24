@@ -29,21 +29,24 @@ class Analysis5 : Fragment() {
 
         mProfileDatabase= ViewModelProvider(this).get(ProfileViewModel::class.java)
 
-        val listOfBehavior3 = mutableListOf<BehaviorItems>()
+
+
+
+        val listOfBehaviour = mutableListOf<BehaviorItems>()
 
         // Ab hier evtl Asynchronität ein Problem?
         mProfileDatabase.readBehaviour.observe(viewLifecycleOwner, Observer { behaviour ->
             for (b in behaviour){
                 val newBehavior = BehaviorItems(b.id, b.beschreibung, b.effizienz, b.einfachheit)
-                listOfBehavior3.add(newBehavior)
+                listOfBehaviour.add(newBehavior)
             }
         })
 
-        listOfBehavior3.sortByDescending { it.efficiencyForUse }
-        listOfBehavior3.sortByDescending { it.einfachheitForUse}
+        listOfBehaviour.sortByDescending { it.efficiencyForUse }
+        listOfBehaviour.sortByDescending { it.einfachheitForUse}
 
         val listOfGoldenBehaviors = mutableListOf<String>()
-        for (b in listOfBehavior3) {
+        for (b in listOfBehaviour) {
             listOfGoldenBehaviors.add(b.beschreibungForUse)
         }
 
@@ -57,6 +60,8 @@ class Analysis5 : Fragment() {
             findNavController().navigate(R.id.action_analysis5_to_design)
 
         }
+
+
 
         return view
     }
