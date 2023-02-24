@@ -26,7 +26,6 @@ class Analysis4 : Fragment(), RecyclerAdapter.SeekBarListener {
 
 
 
-
         val listOfBehaviors2 = mutableListOf<String>()
         // Behaviors aus Datenbank auslesen und Behavior-Names in Liste speichern
         mProfileDatabase.readBehaviour.observe(viewLifecycleOwner, Observer { behaviour ->

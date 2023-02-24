@@ -45,9 +45,6 @@ class Analysis3 : Fragment(), RecyclerAdapter.SeekBarListener {
         })
 
 
-        // Adapter auf RecycleView setzen
-
-
         // Layout Manager auf RecyclerView setzen
         val layoutManager = LinearLayoutManager(context)
         recyclerView.layoutManager = layoutManager
