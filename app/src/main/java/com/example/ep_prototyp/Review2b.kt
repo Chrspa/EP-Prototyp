@@ -41,6 +41,7 @@ class Review2b : Fragment() {
             popupAdviceText.text = getString(R.string.reviewAllesGut)
             popupNavButton.text = getString(R.string.buttonTextAllesGutUndVergesseHuW)
             popupNavButton.setOnClickListener(){
+                popupWindow.dismiss()
                 findNavController().navigate(R.id.action_review2b_to_practice1)
             }
         }

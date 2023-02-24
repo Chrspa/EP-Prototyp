@@ -55,15 +55,13 @@ class Design : Fragment() {
 
     private fun längeBehaviourSpeichern(längeBehaviour:EditText) {
         mProfileDatabase.readRezeptData.observe(viewLifecycleOwner, Observer { data->
-            mProfileDatabase.readData.observe(viewLifecycleOwner,Observer{profil->
                 if(data.isEmpty()){
-                    mProfileDatabase.addRezept(Rezept(0,profil[0].goal.toString(),längeBehaviour.text.toString().toInt()))
+                    mProfileDatabase.addRezept(Rezept(0,"weniger Essen",längeBehaviour.text.toString().toInt()))
                 }else{
-                    mProfileDatabase.updateRezept(Rezept(1,profil[0].goal.toString(),längeBehaviour.text.toString().toInt(),data[0].rezeptCelebration,data[0].rezeptPrompt))
+                    mProfileDatabase.updateRezept(Rezept(1,data[0].rezeptBehaviour,längeBehaviour.text.toString().toInt(),data[0].rezeptCelebration,data[0].rezeptPrompt))
                 }
 
 
-            })
         })
         Toast.makeText(requireContext(),längeBehaviour.text,Toast.LENGTH_LONG).show()
 
