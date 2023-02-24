@@ -14,8 +14,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:text="DESIGN"
-        android:textStyle="bold"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,47 +27,29 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="45dp"
         android:layout_marginTop="30dp"
+        android:lineHeight="20dp"
         android:text="@string/explanationCelebration"
         android:textAlignment="center"
         android:textSize="16sp"
-        android:lineHeight="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/headerDesign" />
 
-    <LinearLayout
-        android:id="@+id/linearLayoutBehaviorSize"
-        android:layout_width="match_parent"
+
+    <EditText
+        android:id="@+id/editBehaviorSize"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="13dp"
-        android:layout_marginBottom="45dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/weiterZuDesign3Button">
-
-        <EditText
-            android:id="@+id/editBehaviorSize"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="mir selbst applaudieren" />
-
-        <View
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
-
-        <Button
-            android:layout_width="153dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="end"
-            android:text="bestätigen" />
-
-
-    </LinearLayout>
-
+        android:layout_gravity="left"
+        android:layout_marginTop="64dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="mir selbst applaudieren"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDesign1" />
 
     <Button
         android:id="@+id/weiterZuDesign3Button"
@@ -82,9 +64,10 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="13dp"
         android:text="Im Anschluss an das \nVerhalten werde ich..."
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/editBehaviorSize"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayoutBehaviorSize" />
+        app:layout_constraintStart_toStartOf="@+id/editBehaviorSize" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

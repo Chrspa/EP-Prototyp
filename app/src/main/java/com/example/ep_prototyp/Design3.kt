@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -29,6 +30,11 @@ class Design3 : Fragment() {
 
 
         button.setOnClickListener {
+            mProfileDatabase.readData.observe(viewLifecycleOwner, Observer { data->
+                mProfileDatabase.updateProfile(Profile(1,data[0].name,data[0].notificationZeit,data[0].goal,1))
+
+            })
+            Thread.sleep(1000)
             findNavController().navigate(R.id.action_design3_to_practiceMain)
 
         }
@@ -39,7 +45,7 @@ class Design3 : Fragment() {
 
     private fun setViewRezept(rezept: TextView) {
         mProfileDatabase.readRezeptData.observe(viewLifecycleOwner, Observer { rezeptData->
-            rezept.setText("immer wenn ich${rezeptData[0].rezeptPrompt} werde ich ${rezeptData[0].rezeptBehaviour}, danach werde ich ${rezeptData[0].rezeptCelebration}!")
+            rezept.setText("immer wenn ich ${rezeptData[0].rezeptPrompt} werde ich ${rezeptData[0].rezeptBehaviour}, danach werde ich ${rezeptData[0].rezeptCelebration}!")
         })
 
 

@@ -30,7 +30,7 @@ class Design2b : Fragment() {
         button.setOnClickListener {
             val eingabe=view.findViewById<EditText>(R.id.editBehaviorSize)
             celebrationSpeichern(eingabe)
-            Toast.makeText(requireContext(),"Länge gespeichert!", Toast.LENGTH_LONG).show()
+            Toast.makeText(requireContext(),"Celebration gespeichert!", Toast.LENGTH_LONG).show()
 
             findNavController().navigate(R.id.action_design2b_to_design3)
         }
@@ -46,7 +46,6 @@ class Design2b : Fragment() {
                     mProfileDatabase.updateRezept(Rezept(1,data[0].rezeptBehaviour,data[0].längeBehaviour,celebration.text.toString(),data[0].rezeptPrompt))
 
         })
-        Toast.makeText(requireContext(),celebration.text, Toast.LENGTH_LONG).show()
 
     }
 }

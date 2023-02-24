@@ -42,12 +42,11 @@
         android:layout_width="153dp"
         android:layout_height="68dp"
         android:layout_margin="13dp"
-        android:layout_marginBottom="56dp"
+        android:layout_marginBottom="16dp"
         android:text="weiter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintRight_toRightOf="parent" />
 
     <EditText
         android:id="@+id/editBehaviorSize"
@@ -62,5 +61,14 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/infoTextDesign1" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wiederholungen oder Min"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/editBehaviorSize"
+        app:layout_constraintStart_toStartOf="@+id/editBehaviorSize" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

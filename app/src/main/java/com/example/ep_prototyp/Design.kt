@@ -46,9 +46,7 @@ class Design : Fragment() {
         mProfileDatabase.readRezeptData.observe(viewLifecycleOwner, Observer { rezept ->
             if(rezept.isEmpty()) {
                 mProfileDatabase.createProfile(Profile(0, "Name"))
-                Toast.makeText(requireContext(), rezept.toString(), Toast.LENGTH_LONG).show()
             }else{
-            Toast.makeText(requireContext(),rezept.toString(),Toast.LENGTH_LONG).show()
         }
         })
     }
@@ -63,7 +61,6 @@ class Design : Fragment() {
 
 
         })
-        Toast.makeText(requireContext(),längeBehaviour.text,Toast.LENGTH_LONG).show()
 
     }
 }

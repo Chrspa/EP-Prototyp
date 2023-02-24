@@ -12,8 +12,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:text="ANALYSE"
-        android:textStyle="bold"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,15 +24,15 @@
         android:id="@+id/infoTextGoal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/explanationGoal"
         android:layout_marginHorizontal="45dp"
         android:layout_marginTop="30dp"
+        android:lineHeight="20dp"
+        android:text="@string/explanationGoal"
         android:textAlignment="center"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        android:textSize="16sp"
-        android:lineHeight="20dp"
         app:layout_constraintTop_toBottomOf="@+id/header_goal" />
 
 
@@ -46,39 +46,18 @@
         app:layout_constraintRight_toRightOf="parent" />
 
 
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
+    <EditText
+        android:id="@+id/editGoal"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="13dp"
-        android:layout_marginBottom="45dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/weiterZuAnalysis2Button"
-        tools:layout_editor_absoluteX="13dp">
-
-        <EditText
-            android:id="@+id/editGoal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Gitarre spielen lernen" />
-
-        <View
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
-
-        <Button
-            android:id="@+id/submitGoal"
-            android:layout_width="153dp"
-            android:layout_height="match_parent"
-            android:text="bestätigen" />
-
-
-    </LinearLayout>
-
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Gitarre spielen lernen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/infoTextGoal" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

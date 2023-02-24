@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_main"
-    app:startDestination="@id/loginScreen">
+    app:startDestination="@id/startFrame">
 
     <fragment
         android:id="@+id/loginScreen"
@@ -159,5 +159,17 @@
         <action
             android:id="@+id/action_fragment_notification_to_practice1"
             app:destination="@id/practice1" />
+    </fragment>
+    <fragment
+        android:id="@+id/startFrame"
+        android:name="com.example.ep_prototyp.StartFrame"
+        android:label="fragment_start_frame"
+        tools:layout="@layout/fragment_start_frame" >
+        <action
+            android:id="@+id/action_startFrame_to_loginScreen"
+            app:destination="@id/loginScreen" />
+        <action
+            android:id="@+id/action_startFrame_to_practice2"
+            app:destination="@id/practice2" />
     </fragment>
 </navigation>

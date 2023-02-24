@@ -44,7 +44,6 @@ class Design2 : Fragment() {
                     mProfileDatabase.updateRezept(Rezept(1,data[0].rezeptBehaviour,data[0].längeBehaviour,data[0].rezeptCelebration,prompt.text.toString()))
 
         })
-        Toast.makeText(requireContext(),prompt.text,Toast.LENGTH_LONG).show()
 
     }
 }
