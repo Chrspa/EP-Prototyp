@@ -48,11 +48,11 @@
 
     <TextView
         android:id="@+id/rezeptAusgabe"
-        android:layout_width="203dp"
-        android:layout_height="186dp"
-        android:layout_marginTop="48dp"
+        android:layout_width="197dp"
+        android:layout_height="285dp"
+        android:layout_marginTop="36dp"
         android:text="Probier es nochmal :)"
-        android:textSize="34sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

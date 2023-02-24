@@ -61,7 +61,7 @@ class LoginScreen : Fragment() {
         mProfileDatabase.readData.observe(viewLifecycleOwner, Observer { profil ->
             if(profil.isEmpty()){
                 mProfileDatabase.createProfile(Profile(0,"Name"))
-                username.setText(profil[0].name)
+                username.setText("Name")
             }else{
                 username.setText(profil[0].name)
             }

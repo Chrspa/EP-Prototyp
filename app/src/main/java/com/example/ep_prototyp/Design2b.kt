@@ -43,9 +43,8 @@ class Design2b : Fragment() {
     }
     private fun celebrationSpeichern(celebration: EditText) {
         mProfileDatabase.readRezeptData.observe(viewLifecycleOwner, Observer { data->
-            mProfileDatabase.readData.observe(viewLifecycleOwner,Observer{profil->
-                    mProfileDatabase.updateRezept(Rezept(1,profil[0].goal.toString(),data[0].längeBehaviour,celebration.text.toString(),data[0].rezeptPrompt))
-            })
+                    mProfileDatabase.updateRezept(Rezept(1,data[0].rezeptBehaviour,data[0].längeBehaviour,celebration.text.toString(),data[0].rezeptPrompt))
+
         })
         Toast.makeText(requireContext(),celebration.text, Toast.LENGTH_LONG).show()
 

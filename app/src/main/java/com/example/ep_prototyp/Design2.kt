@@ -41,9 +41,8 @@ class Design2 : Fragment() {
     }
     private fun promptSpeichern(prompt:EditText) {
         mProfileDatabase.readRezeptData.observe(viewLifecycleOwner, Observer { data->
-            mProfileDatabase.readData.observe(viewLifecycleOwner,Observer{profil->
-                    mProfileDatabase.updateRezept(Rezept(1,profil[0].goal.toString(),data[0].längeBehaviour,data[0].rezeptCelebration,prompt.text.toString()))
-            })
+                    mProfileDatabase.updateRezept(Rezept(1,data[0].rezeptBehaviour,data[0].längeBehaviour,data[0].rezeptCelebration,prompt.text.toString()))
+
         })
         Toast.makeText(requireContext(),prompt.text,Toast.LENGTH_LONG).show()
 
