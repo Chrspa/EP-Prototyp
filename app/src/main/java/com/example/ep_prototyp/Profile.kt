@@ -31,7 +31,7 @@ data class Rezept(
     @PrimaryKey(autoGenerate = true)
     val id: Int,
     val rezeptBehaviour:String,
-    val längeBehaviour:Int?=null,
+    val längeBehaviour:String?=null,
     val rezeptCelebration:String?=null,
     val rezeptPrompt:String?=null
 )
