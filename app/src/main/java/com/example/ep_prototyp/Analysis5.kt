@@ -14,10 +14,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.ep_prototyp.R
 import kotlin.concurrent.thread
 
-class Analysis5 : Fragment() {
+class Analysis5 : Fragment(), RecyclerAdapter.OnCardClickListener {
 
     private lateinit var mProfileDatabase : ProfileViewModel
     private lateinit var recyclerView: RecyclerView
+    private var clickPosition: Int = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,6 +40,7 @@ class Analysis5 : Fragment() {
 
             val testList = mutableListOf<String>("Golden Behavior 1", "Golden Behavior 2", "Golden Behavior 3")
             val adapter = RecyclerAdapter(testList, 1)
+            adapter.setCardClickListener(this)
             recyclerView.adapter = adapter
 
 
@@ -74,7 +76,6 @@ class Analysis5 : Fragment() {
             })
             */
 
-            
 
             mProfileDatabase.readRezeptData.observe(viewLifecycleOwner, Observer { rezept ->
                 if(rezept.isEmpty()){
@@ -98,8 +99,16 @@ class Analysis5 : Fragment() {
         return view
     }
 
+
     class BehaviorItems (val idForUse:Int,
                          val beschreibungForUse:String,
                          val efficiencyForUse :Int?=null,
                          val einfachheitForUse:Int?=null)
+
+
+    override fun onCardClick(position: Int) {
+        clickPosition = position
+    }
+
+
 }
