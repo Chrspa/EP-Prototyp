@@ -29,19 +29,11 @@ class Analysis2 : Fragment() {
         val button=view.findViewById<Button>(R.id.weiterZuAnalysis3Button)
 
         button.setOnClickListener {
-            //Mindestanzahl an Verhaltensweisen festlegen
+            addBehaviour(eingabe)
             findNavController().navigate(R.id.action_analysis2_to_analysis3)
 
         }
 
-        val submitButton = view.findViewById<Button>(R.id.submitBehavior)
-
-        val listOfBehaviors = mutableListOf<String>("Push-Ups", "Liegestütz", "Squats", "Plank")
-
-        submitButton.setOnClickListener(){
-            addBehaviour(eingabe)
-
-        }
         return view
     }
 

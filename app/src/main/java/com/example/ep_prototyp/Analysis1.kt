@@ -31,18 +31,12 @@ class Analysis1 : Fragment() {
         val button=view.findViewById<Button>(R.id.weiterZuAnalysis2Button)
 
         button.setOnClickListener {
-            //wenn noch kein Ziel gespeichert, sollte kein "Weiter" möglich sein
-            findNavController().navigate(R.id.action_analysis1_to_analysis2)
-        }
-
-        val submitButton = view.findViewById<Button>(R.id.submitGoal)
-
-
-        submitButton.setOnClickListener(){
             var editGoalText=view.findViewById<EditText>(R.id.editGoal)
             uploadGoal(editGoalText.text.toString())
             Toast.makeText(requireContext(),"Dein Ziel wurde festgehalten!",Toast.LENGTH_LONG).show()
+            findNavController().navigate(R.id.action_analysis1_to_analysis2)
         }
+
 
         return view
     }
