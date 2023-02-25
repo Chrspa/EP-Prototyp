@@ -76,18 +76,18 @@ class Analysis5 : Fragment(), RecyclerAdapter.OnCardClickListener {
             })
             */
 
+            //die clickPosition-Variable zeigt, welche Card geklickt wurde!
 
             mProfileDatabase.readRezeptData.observe(viewLifecycleOwner, Observer { rezept ->
                 if(rezept.isEmpty()){
-                    mProfileDatabase.addRezept(Rezept(0, testList[0]))
+                    mProfileDatabase.addRezept(Rezept(0, testList[clickPosition]))
                 }else{
-                    if(rezept[0].rezeptBehaviour!=testList[0]){
-                        mProfileDatabase.updateRezept(Rezept(0, testList[0]))
+                    if(rezept[0].rezeptBehaviour!=testList[clickPosition]){
+                        mProfileDatabase.updateRezept(Rezept(0, testList[clickPosition]))
                     }
                 }
 
             })
-
 
         })
 
@@ -98,12 +98,6 @@ class Analysis5 : Fragment(), RecyclerAdapter.OnCardClickListener {
 
         return view
     }
-
-
-    class BehaviorItems (val idForUse:Int,
-                         val beschreibungForUse:String,
-                         val efficiencyForUse :Int?=null,
-                         val einfachheitForUse:Int?=null)
 
 
     override fun onCardClick(position: Int) {

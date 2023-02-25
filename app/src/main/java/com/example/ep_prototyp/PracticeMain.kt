@@ -33,7 +33,7 @@ class PracticeMain : Fragment() {
         val notificationButton = view.findViewById<Button>(R.id.notificationButton)
         val recipeText =  view.findViewById<TextView>(R.id.recipePlaceholder)
         mProfileDatabase.readRezeptData.observe(viewLifecycleOwner, Observer { rezept ->
-            recipeText.text="immer wenn ich ${rezept[0].rezeptPrompt} werde ich ${rezept[0].rezeptBehaviour}, danach werde ich ${rezept[0].rezeptCelebration}!"
+            recipeText.text="Immer wenn ich ${rezept[0].rezeptPrompt}, werde ich ${rezept[0].rezeptBehaviour}, danach werde ich ${rezept[0].rezeptCelebration}!"
         })
 
 
