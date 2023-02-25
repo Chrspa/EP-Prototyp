@@ -45,7 +45,7 @@ class Design3 : Fragment() {
 
     private fun setViewRezept(rezept: TextView) {
         mProfileDatabase.readRezeptData.observe(viewLifecycleOwner, Observer { rezeptData->
-            rezept.setText("immer wenn ich ${rezeptData[0].rezeptPrompt} werde ich ${rezeptData[0].rezeptBehaviour}, danach werde ich ${rezeptData[0].rezeptCelebration}!")
+            rezept.setText("Immer wenn ich ${rezeptData[0].rezeptPrompt}, werde ich ${rezeptData[0].rezeptBehaviour}, danach werde ich ${rezeptData[0].rezeptCelebration}!")
         })
 
 
