@@ -43,7 +43,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewGB"></androidx.recyclerview.widget.RecyclerView>
+        app:layout_constraintTop_toBottomOf="@+id/textViewGB"/>
 
     <TextView
         android:id="@+id/textGBwaehleAus"
@@ -52,7 +52,7 @@
         android:layout_marginHorizontal="45dp"
         android:layout_marginBottom="45dp"
         android:lineHeight="20dp"
-        android:text="Dein Behaviour für dein neues Habit Steht fest!"
+        android:text="Wähle das Behavior, das du am liebsten ausführen möchtest!"
         android:textAlignment="center"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@id/weiterZuDesignAnalysisButton"
@@ -70,18 +70,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
-    <TextView
-        android:id="@+id/BehaviourSimple"
-        android:layout_width="304dp"
-        android:layout_height="287dp"
-        android:layout_marginTop="28dp"
-        android:text="TextView"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewGB" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

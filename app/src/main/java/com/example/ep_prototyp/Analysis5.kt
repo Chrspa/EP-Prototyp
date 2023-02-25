@@ -6,20 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.SeekBar
-import android.widget.TextView
-import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ep_prototyp.R
-import com.google.android.material.search.SearchView.Behavior
+import kotlin.concurrent.thread
 
 class Analysis5 : Fragment() {
 
     private lateinit var mProfileDatabase : ProfileViewModel
+    private lateinit var recyclerView: RecyclerView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,81 +25,75 @@ class Analysis5 : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_analysis5, container, false)
-        val recyclerView2 = view.findViewById<RecyclerView>(R.id.recyclerViewGoldenBehaviors)
+        recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewGoldenBehaviors)
+
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         mProfileDatabase= ViewModelProvider(this).get(ProfileViewModel::class.java)
 
 
-/*
 
-        val listOfBehaviour = mutableListOf<BehaviorItems>()
-
-        // Ab hier evtl Asynchronität ein Problem?
-        mProfileDatabase.readBehaviour.observe(viewLifecycleOwner, Observer { behaviour ->
-            for (b in behaviour){
-                val newBehavior = BehaviorItems(b.id, b.beschreibung, b.effizienz, b.einfachheit)
-                listOfBehaviour.add(newBehavior)
-                Toast.makeText(requireContext(),listOfBehaviour[0].beschreibungForUse,Toast.LENGTH_SHORT).show()
-            }
-        })
-
-        listOfBehaviour.sortByDescending { it.efficiencyForUse!!.toInt() + it.einfachheitForUse!!.toInt()}
-
-
-        val listOfGoldenBehaviors = mutableListOf<String>()
-        for (b in listOfBehaviour) {
-            listOfGoldenBehaviors.add(b.beschreibungForUse)
-        }
-
-        var adapter = RecyclerAdapter2(listOfGoldenBehaviors)
-        recyclerView2.adapter = adapter
-
-        val layoutManager = LinearLayoutManager(context)
-        recyclerView2.layoutManager = layoutManager
-*/
         val button=view.findViewById<Button>(R.id.weiterZuDesignAnalysisButton)
-        val text=view.findViewById<TextView>(R.id.BehaviourSimple)
-        val wahl=view.findViewById<TextView>(R.id.textGBwaehleAus)
 
-        var output=""
         mProfileDatabase.readBehaviour.observe(viewLifecycleOwner, Observer { behaviour ->
 
-            var liste= mutableListOf<Behaviour>()
+            val testList = mutableListOf<String>("Golden Behavior 1", "Golden Behavior 2", "Golden Behavior 3")
+            val adapter = RecyclerAdapter(testList, 1)
+            recyclerView.adapter = adapter
+
+
+            //Hier stürzt die App wegen einer NullPointer-Exception ab.
+
+            /*
+            val listOfBehavior= mutableListOf<Behaviour>()
+            val behaviorNames = mutableListOf<String>()
             for(i in behaviour){
-                liste.add(i)
+                listOfBehavior.add(i)
             }
-            liste.sortByDescending { it.effizienz!! + it.einfachheit!!}
 
-            var index=1
 
-            for(i in liste){
-                output+=" platz $index: ${i.beschreibung}\n\n"
-                index++
-                if(index==3)break
+            if (listOfBehavior.size == behaviour.size) {
+                listOfBehavior.sortByDescending { it.effizienz!! + it.einfachheit!! }
             }
+
+
+            for (b in listOfBehavior){
+                behaviorNames.add(b.beschreibung)
+            }
+
+
             mProfileDatabase.readRezeptData.observe(viewLifecycleOwner, Observer { rezept ->
                 if(rezept.isEmpty()){
-                    mProfileDatabase.addRezept(Rezept(0, liste[0].beschreibung))
+                    mProfileDatabase.addRezept(Rezept(0, listOfBehavior[0].beschreibung))
                 }else{
-                    if(rezept[0].rezeptBehaviour!=liste[0].beschreibung)mProfileDatabase.updateRezept(Rezept(0, liste[0].beschreibung))
+                    if(rezept[0].rezeptBehaviour!=listOfBehavior[0].beschreibung){
+                        mProfileDatabase.updateRezept(Rezept(0, listOfBehavior[0].beschreibung))
+                    }
                 }
 
+            })
+            */
+
+            
+
+            mProfileDatabase.readRezeptData.observe(viewLifecycleOwner, Observer { rezept ->
+                if(rezept.isEmpty()){
+                    mProfileDatabase.addRezept(Rezept(0, testList[0]))
+                }else{
+                    if(rezept[0].rezeptBehaviour!=testList[0]){
+                        mProfileDatabase.updateRezept(Rezept(0, testList[0]))
+                    }
+                }
 
             })
-            text.text = output
-            wahl.text = "dein neues Behaviour ist ${liste[0].beschreibung} !"
+
+
         })
-
-
-
-
 
         button.setOnClickListener {
             findNavController().navigate(R.id.action_analysis5_to_design)
 
         }
-
-
 
         return view
     }

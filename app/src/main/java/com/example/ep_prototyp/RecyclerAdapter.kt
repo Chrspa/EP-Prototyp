@@ -8,7 +8,8 @@ import android.widget.SeekBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class RecyclerAdapter (val list: List<String>, val cardviewType: Int) : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
+class RecyclerAdapter (val list: List<String>, val type: Int) : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
+
 
 
     private var listener: SeekBarListener? = null //listener-variable
@@ -22,8 +23,17 @@ class RecyclerAdapter (val list: List<String>, val cardviewType: Int) : Recycler
         this.listener = listener
     }
 
+    override fun getItemViewType(position: Int): Int {
+        return if (type == 0) {
+            cardViewRating
+        } else {
+            cardViewGoldenBehaviors
+        }
+    }
+
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return when (viewType) {
+        return when (type) {
             cardViewRating -> {
                 val v = LayoutInflater.from(parent.context).inflate(R.layout.card_layout_behaviors, parent, false)
                 ViewHolderRating(v)
@@ -32,7 +42,7 @@ class RecyclerAdapter (val list: List<String>, val cardviewType: Int) : Recycler
                 val v = LayoutInflater.from(parent.context).inflate(R.layout.card_layout_golden_behaviors, parent, false)
                 ViewHolder(v)
             }
-            else -> throw IllegalArgumentException("Invalid view type")
+            else -> throw IllegalArgumentException("Das hat nicht geklappt.")
         }
     }
 
@@ -40,6 +50,7 @@ class RecyclerAdapter (val list: List<String>, val cardviewType: Int) : Recycler
         val item = list[position]
         holder.itemTitle.text = item
     }
+
 
 
     override fun getItemCount(): Int {
