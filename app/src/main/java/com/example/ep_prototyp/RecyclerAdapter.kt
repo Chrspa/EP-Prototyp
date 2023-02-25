@@ -8,24 +8,39 @@ import android.widget.SeekBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class RecyclerAdapter (val list: List<String>) : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
+class RecyclerAdapter (val list: List<String>, val cardviewType: Int) : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
 
     private var listener: SeekBarListener? = null //listener-variable
+    companion object {
+        private const val cardViewRating = 0
+        private const val cardViewGoldenBehaviors = 1
+    }
 
 
     fun setSeekBarListener(listener: SeekBarListener) { // Funktion, die listener setzt
         this.listener = listener
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerAdapter.ViewHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.card_layout_behaviors, parent, false)
-        return ViewHolder(v)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        return when (viewType) {
+            cardViewRating -> {
+                val v = LayoutInflater.from(parent.context).inflate(R.layout.card_layout_behaviors, parent, false)
+                ViewHolderRating(v)
+            }
+            cardViewGoldenBehaviors -> {
+                val v = LayoutInflater.from(parent.context).inflate(R.layout.card_layout_golden_behaviors, parent, false)
+                ViewHolder(v)
+            }
+            else -> throw IllegalArgumentException("Invalid view type")
+        }
     }
 
-    override fun onBindViewHolder(holder: RecyclerAdapter.ViewHolder, position: Int) {
-        holder.itemTitle.text = list[position]
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val item = list[position]
+        holder.itemTitle.text = item
     }
+
 
     override fun getItemCount(): Int {
         return list.size
@@ -35,9 +50,14 @@ class RecyclerAdapter (val list: List<String>) : RecyclerView.Adapter<RecyclerAd
         fun onSeekBarChanged(position: Int, progress: Int)
     }
 
-    inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        var itemImage = itemView.findViewById<ImageView>(R.id.image_behavior)
+    //für zweiten CardView (einmal mit, einmal ohne SeekBar) mit inheritance gearbeitet
+    open class  ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var itemTitle = itemView.findViewById<TextView>(R.id.behaviorName)
+        var itemImage = itemView.findViewById<ImageView>(R.id.image_behavior)
+    }
+
+
+    inner class ViewHolderRating(itemView: View): ViewHolder(itemView) {
         var seekBar = itemView.findViewById<SeekBar>(R.id.seekBarBehavior)
 
         init {
@@ -52,4 +72,5 @@ class RecyclerAdapter (val list: List<String>) : RecyclerView.Adapter<RecyclerAd
             })
         }
     }
+
 }

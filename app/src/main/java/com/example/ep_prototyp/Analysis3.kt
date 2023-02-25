@@ -39,7 +39,7 @@ class Analysis3 : Fragment(), RecyclerAdapter.SeekBarListener {
             for (b in behaviour){
                 listOfBehaviors.add(b.beschreibung)
             }
-            var adapter : RecyclerAdapter = RecyclerAdapter(listOfBehaviors)
+            var adapter : RecyclerAdapter = RecyclerAdapter(listOfBehaviors, 0)
             adapter.setSeekBarListener(this)
             recyclerView.adapter = adapter
         })
