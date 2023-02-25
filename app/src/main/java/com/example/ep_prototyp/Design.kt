@@ -54,9 +54,9 @@ class Design : Fragment() {
     private fun längeBehaviourSpeichern(längeBehaviour:EditText) {
         mProfileDatabase.readRezeptData.observe(viewLifecycleOwner, Observer { data->
                 if(data.isEmpty()){
-                    mProfileDatabase.addRezept(Rezept(0,"weniger Essen",längeBehaviour.text.toString().toInt()))
+                    mProfileDatabase.addRezept(Rezept(0,"weniger Essen",längeBehaviour.text.toString()))
                 }else{
-                    mProfileDatabase.updateRezept(Rezept(1,data[0].rezeptBehaviour,längeBehaviour.text.toString().toInt(),data[0].rezeptCelebration,data[0].rezeptPrompt))
+                    mProfileDatabase.updateRezept(Rezept(1,data[0].rezeptBehaviour,längeBehaviour.text.toString(),data[0].rezeptCelebration,data[0].rezeptPrompt))
                 }
 
 
