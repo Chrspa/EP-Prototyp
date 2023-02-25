@@ -61,7 +61,7 @@ class RecyclerAdapter (val list: List<String>, val type: Int) : RecyclerView.Ada
                 // Handle click event here
                 Toast.makeText(
                     holder.itemView.context,
-                    "Card clicked at position $position",
+                    "Golden Behavior ausgewählt",
                     Toast.LENGTH_SHORT
                 ).show()
             }
