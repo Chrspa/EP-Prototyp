@@ -32,8 +32,11 @@ class PracticeMain : Fragment() {
 
         val notificationButton = view.findViewById<Button>(R.id.notificationButton)
         val recipeText =  view.findViewById<TextView>(R.id.recipePlaceholder)
+        val wiederholungenText =  view.findViewById<TextView>(R.id.wiederholungen)
+
         mProfileDatabase.readRezeptData.observe(viewLifecycleOwner, Observer { rezept ->
             recipeText.text="Immer wenn ich ${rezept[0].rezeptPrompt}, werde ich ${rezept[0].rezeptBehaviour}, danach werde ich ${rezept[0].rezeptCelebration}!"
+            wiederholungenText.text="${rezept[0].längeBehaviour} lang/mal"
         })
 
 

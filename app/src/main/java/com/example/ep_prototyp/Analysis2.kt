@@ -26,10 +26,16 @@ class Analysis2 : Fragment() {
             // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_analysis2, container, false)
         val eingabe = view.findViewById<EditText>(R.id.editBehavior)
-        val button=view.findViewById<Button>(R.id.weiterZuAnalysis3Button)
-
-        button.setOnClickListener {
+        val weiterbutton=view.findViewById<Button>(R.id.weiterZuAnalysis3Button)
+        val hinzufügenbutton=view.findViewById<Button>(R.id.hinzufügen)
+        hinzufügenbutton.setOnClickListener {
             addBehaviour(eingabe)
+            eingabe.setText("")
+
+        }
+
+        weiterbutton.setOnClickListener {
+
             findNavController().navigate(R.id.action_analysis2_to_analysis3)
 
         }

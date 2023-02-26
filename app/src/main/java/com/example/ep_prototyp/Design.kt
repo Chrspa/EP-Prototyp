@@ -41,23 +41,12 @@ class Design : Fragment() {
         return view
 
     }
-    private fun load(ausgabe:TextView){
-
-        mProfileDatabase.readRezeptData.observe(viewLifecycleOwner, Observer { rezept ->
-            if(rezept.isEmpty()) {
-                mProfileDatabase.createProfile(Profile(0, "Name"))
-            }else{
-        }
-        })
-    }
 
     private fun längeBehaviourSpeichern(längeBehaviour:EditText) {
         mProfileDatabase.readRezeptData.observe(viewLifecycleOwner, Observer { data->
-                if(data.isEmpty()){
-                    mProfileDatabase.addRezept(Rezept(0,"weniger Essen",längeBehaviour.text.toString().toInt()))
-                }else{
-                    mProfileDatabase.updateRezept(Rezept(1,data[0].rezeptBehaviour,längeBehaviour.text.toString().toInt(),data[0].rezeptCelebration,data[0].rezeptPrompt))
-                }
+
+                    mProfileDatabase.updateRezept(Rezept(1,data[0].rezeptBehaviour,längeBehaviour.text.toString(),data[0].rezeptCelebration,data[0].rezeptPrompt))
+
         })
 
     }

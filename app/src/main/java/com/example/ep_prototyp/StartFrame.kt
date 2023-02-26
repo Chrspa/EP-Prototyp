@@ -23,12 +23,20 @@ class StartFrame : Fragment() {
         val button = view.findViewById<Button>(R.id.button)
         button.setOnClickListener {
             mProfileDatabase.readData.observe(viewLifecycleOwner, Observer { rezept ->
-              if(rezept[0].PracticeViewFlag==1){
-                  findNavController().navigate(R.id.action_startFrame_to_practice2)
 
-              }else{
-                  findNavController().navigate(R.id.action_startFrame_to_loginScreen)
-              }
+                if(rezept.isEmpty()){
+                    findNavController().navigate(R.id.action_startFrame_to_loginScreen)
+
+                }else{
+                    if(rezept[0].PracticeViewFlag==0){
+                        findNavController().navigate(R.id.action_startFrame_to_loginScreen)
+
+
+                    }else{
+                        findNavController().navigate(R.id.action_startFrame_to_practice2)
+
+                    }
+                }
             })
         }
 

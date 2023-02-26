@@ -26,10 +26,10 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="45dp"
         android:layout_marginTop="30dp"
+        android:lineHeight="20dp"
         android:text="@string/explanationPractice"
         android:textAlignment="center"
         android:textSize="16sp"
-        android:lineHeight="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -53,13 +53,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="45dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="52dp"
+        android:lineHeight="20dp"
         android:text="@string/explanationFeedback"
         android:textAlignment="center"
         android:textSize="16sp"
-        android:lineHeight="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recipePlaceholder" />
 
@@ -80,5 +80,20 @@
         android:text="notification"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent" />
+
+    <TextView
+        android:id="@+id/wiederholungen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:layout_marginBottom="16dp"
+        android:text="Länge im min/wiederholungen"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/infoTextPractice2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recipePlaceholder" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

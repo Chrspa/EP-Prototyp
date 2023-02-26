@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -38,11 +39,54 @@ class Analysis5 : Fragment(), RecyclerAdapter.OnCardClickListener {
 
         mProfileDatabase.readBehaviour.observe(viewLifecycleOwner, Observer { behaviour ->
 
-            val testList = mutableListOf<String>("Golden Behavior 1", "Golden Behavior 2", "Golden Behavior 3")
-            val adapter = RecyclerAdapter(testList, 1)
+           // val testList = mutableListOf<String>("Golden Behavior 1", "Golden Behavior 2", "Golden Behavior 3")
+           // val adapter = RecyclerAdapter(testList, 1)
+
+            val listOfBehavior= mutableListOf<Behaviour>()
+            val behaviorNames = mutableListOf<String>()
+
+            for(i in behaviour){
+                listOfBehavior.add(i)
+            }
+            if(listOfBehavior.isEmpty()){
+                Toast.makeText(requireContext(),"DAS GEHT NET",Toast.LENGTH_SHORT).show()
+
+            }
+
+            if (listOfBehavior.size == behaviour.size) {
+                listOfBehavior.sortByDescending { it.effizienz!! + it.einfachheit!! }
+            }
+
+            for (b in listOfBehavior){
+                behaviorNames.add(b.beschreibung)
+            }
+
+
+            val adapter = RecyclerAdapter(behaviorNames, 1)
             adapter.setCardClickListener(this)
             recyclerView.adapter = adapter
+/*
+            mProfileDatabase.readRezeptData.observe(viewLifecycleOwner, Observer { rezept ->
+                if(rezept.isEmpty()){
+                    mProfileDatabase.addRezept(Rezept(0, listOfBehavior[0].beschreibung))
+                }else{
+                    if(rezept[0].rezeptBehaviour!=listOfBehavior[0].beschreibung){
+                        mProfileDatabase.updateRezept(Rezept(0, listOfBehavior[0].beschreibung))
+                    }
+                }
 
+            })*/
+
+            mProfileDatabase.readRezeptData.observe(viewLifecycleOwner, Observer { rezept ->
+                if(rezept.isEmpty()){
+                    mProfileDatabase.addRezept(Rezept(0, behaviorNames[clickPosition]))
+                }else{
+                    if(rezept[0].rezeptBehaviour!=behaviorNames[clickPosition]){
+                        mProfileDatabase.updateRezept(Rezept(0, behaviorNames[clickPosition]))
+                    }
+                }
+
+            })
 
             //Hier stürzt die App wegen einer NullPointer-Exception ab.
 
@@ -78,16 +122,7 @@ class Analysis5 : Fragment(), RecyclerAdapter.OnCardClickListener {
 
             //die clickPosition-Variable zeigt, welche Card geklickt wurde!
 
-            mProfileDatabase.readRezeptData.observe(viewLifecycleOwner, Observer { rezept ->
-                if(rezept.isEmpty()){
-                    mProfileDatabase.addRezept(Rezept(0, testList[clickPosition]))
-                }else{
-                    if(rezept[0].rezeptBehaviour!=testList[clickPosition]){
-                        mProfileDatabase.updateRezept(Rezept(0, testList[clickPosition]))
-                    }
-                }
 
-            })
 
         })
 
