@@ -28,7 +28,6 @@ class Review : Fragment() {
 
         mProfileDatabase.readWeekData.observe(viewLifecycleOwner, Observer { data ->
             var i :Int =data[0].erledigt
-            Toast.makeText(requireContext(),data[0].erledigt.toString(), Toast.LENGTH_SHORT).show()
 
            val ausgabe = when(i) {
                 0, 1, 2 ->

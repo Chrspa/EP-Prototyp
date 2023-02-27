@@ -53,12 +53,14 @@ class Analysis5 : Fragment(), RecyclerAdapter.OnCardClickListener {
 
             }
 
-            if (listOfBehavior.size == behaviour.size) {
                 listOfBehavior.sortByDescending { it.effizienz!! + it.einfachheit!! }
-            }
 
+            var zahler=0
             for (b in listOfBehavior){
-                behaviorNames.add(b.beschreibung)
+                if(zahler<3){
+                    behaviorNames.add(b.beschreibung)
+                }
+                zahler++
             }
 
 

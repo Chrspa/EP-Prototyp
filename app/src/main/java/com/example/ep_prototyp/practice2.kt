@@ -53,33 +53,25 @@ class practice2 : Fragment() {
                 */
                 if (boxenListe[0].isChecked) {
                     counter++
-                    Toast.makeText(requireContext(),counter.toString(),Toast.LENGTH_SHORT).show()
                 }
                 if (boxenListe[1].isChecked) {
                     counter++
-                    Toast.makeText(requireContext(),counter.toString(),Toast.LENGTH_SHORT).show()
                 }
                 if (boxenListe[2].isChecked) {
                     counter++
-                    Toast.makeText(requireContext(),counter.toString(),Toast.LENGTH_SHORT).show()
                 }
                 if (boxenListe[3].isChecked) {
                     counter++
-                    Toast.makeText(requireContext(),counter.toString(),Toast.LENGTH_SHORT).show()
                 }
                 if (boxenListe[4].isChecked) {
                     counter++
-                    Toast.makeText(requireContext(),counter.toString(),Toast.LENGTH_SHORT).show()
                 }
                 if (boxenListe[5].isChecked) {
                     counter++
-                    Toast.makeText(requireContext(),counter.toString(),Toast.LENGTH_SHORT).show()
                 }
                 if (boxenListe[6].isChecked) {
                     counter++
-                    Toast.makeText(requireContext(),counter.toString(),Toast.LENGTH_SHORT).show()
                 }
-
 
                 if(data.isEmpty()){
                     mProfileDatabase.addWeek(Week(0,counter))
@@ -91,7 +83,6 @@ class practice2 : Fragment() {
 
             mProfileDatabase.readData.observe(viewLifecycleOwner, Observer { data->
                 mProfileDatabase.updateProfile(Profile(data[0].id,data[0].name,data[0].notificationZeit,data[0].goal,0))
-               Toast.makeText(requireContext(),data[0].PracticeViewFlag.toString(),Toast.LENGTH_SHORT).show()
             })
             Thread.sleep(1000)
             findNavController().navigate(R.id.action_practice2_to_review)
